@@ -21,7 +21,7 @@ Temuan yang berisiko bisnis tinggi tidak otomatis memberi nilai tender tinggi ji
 
 ## 3. Rumus simulasi internal: 0–100
 
-Beri nilai setiap dimensi dari 0 sampai 5, lalu hitung. Nilai 0 berarti dampak atau dukungan bukti untuk dimensi tersebut tidak terbukti; nilai 2 dan 4 adalah tingkat di antara nilai acuan.
+Beri nilai setiap dimensi dari 0 sampai 5, lalu hitung. Nilai 0 berarti hasil uji tidak menunjukkan kontribusi risiko pada dimensi tersebut. Jika evidence tidak cukup untuk menilai suatu dimensi, jangan memberi nilai 0; gunakan INCONCLUSIVE sampai tersedia dasar penilaian. Nilai 2 dan 4 adalah tingkat di antara nilai acuan.
 
 `Skor = Σ (Bobot dimensi × Nilai dimensi / 5)`
 
