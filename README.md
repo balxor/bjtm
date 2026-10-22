@@ -25,6 +25,8 @@ Framework ini digunakan untuk merencanakan dan melaksanakan Proof of Concept (Po
 | [Kesiapan klien dan tim](docs/08-kesiapan-klien-dan-tim.md) | Input proyek, peran tim, dan persiapan teknis |
 | [Operating model](docs/09-operating-model.md) | Workstream, deliverable, dan quality gate |
 | [Remittance test catalog](docs/10-remittance-test-catalog.md) | Test case teknis, preconditions, expected result, evidence, serta kriteria pass/fail |
+| [Attack-path matrix](docs/11-remittance-attack-path-matrix.md) | Metode manual-first, scoring likelihood × impact, prioritas, dan detail jalur uji |
+| [Sequence diagrams](docs/12-remittance-sequence-diagrams.md) | Diagram Create-to-Submit, Approval Binding, Retry, Callback, dan Reconciliation |
 | [Test-case template](templates/test-case-template.md) | Format desain dan pelaksanaan test |
 | [Finding template](templates/finding-template.md) | Format temuan dan rekomendasi |
 | [Evidence-log template](templates/evidence-log-template.md) | Indeks evidence dan kontrol penyimpanan |
