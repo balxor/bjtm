@@ -2,7 +2,7 @@
 
 ## 1. Tujuan
 
-Dokumen ini menetapkan lima skenario kandidat utama untuk demonstrasi penetration testing pada remittance API. Setiap skenario dirancang agar dapat dieksekusi secara terukur, diulang, dibuktikan dengan evidence, dan dihentikan sebelum timbul efek finansial nyata.
+Dokumen ini menetapkan lima skenario kandidat utama untuk demonstrasi penetration testing pada remittance API. Setiap skenario dirancang agar dapat dieksekusi secara terukur, diulang, dibuktikan dengan evidence, dan dihentikan sebelum timbul efek finansial nyata. Gunakan skenario ini jika aplikasi uji yang ditetapkan Bank memang mencakup remittance; dokumen jadwal PoC yang tersedia belum menyebut nama aplikasi atau arsitektur teknis.
 
 Sebelum eksekusi, sesuaikan nama service, API route, role, transaction state, serta expected behavior dengan API contract, requirement, dan Rules of Engagement (RoE). Contoh endpoint pada dokumen ini menggunakan domain placeholder dan bukan target operasional.
 
@@ -301,6 +301,7 @@ PoC dinyatakan selesai bila:
 ## 12. Relasi dengan dokumentasi lain
 
 - [Remittance Threat Model](03-remittance-threat-model.md)
+- [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md)
 - [OWASP Top 10:2025 Mapping](17-owasp-top10-2025-mapping.md)
 - [Scoring Temuan untuk Persiapan Evaluasi Bank Jatim](18-scoring-temuan-bank-jatim.md)
 - [Remittance Test Catalog](10-remittance-test-catalog.md)
