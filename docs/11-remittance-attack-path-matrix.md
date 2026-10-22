@@ -4,7 +4,7 @@
 
 Dokumen ini digunakan untuk memilih, menjalankan, dan menilai attack path pada pengujian remittance. Setiap path memuat prasyarat, kontrol yang diuji, prosedur validasi, expected behavior, evidence, dampak, dan prioritas.
 
-Attack path adalah hipotesis pengujian, bukan pernyataan bahwa kontrol gagal. Gunakan target, akun, role, metode, dan environment dalam scope matrix serta Rules of Engagement (RoE).
+Attack path adalah hipotesis pengujian, bukan pernyataan bahwa kontrol gagal. Gunakan target, akun, role, metode, dan environment dalam scope matrix serta Rules of Engagement (RoE). Gunakan jalur remittance hanya jika aplikasi uji yang ditetapkan Bank memang mencakup proses remittance. Brief PoC yang tersedia belum menyebut nama aplikasi atau arsitektur aktual.
 
 ## 2. Metodologi manual-first untuk pengujian API remittance
 
