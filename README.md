@@ -27,7 +27,7 @@ Framework ini digunakan untuk merencanakan dan melaksanakan Proof of Concept (Po
 | [Remittance test catalog](docs/10-remittance-test-catalog.md) | Test case teknis, preconditions, expected result, evidence, serta kriteria pass/fail |
 | [Attack-path matrix](docs/11-remittance-attack-path-matrix.md) | Metode manual-first, scoring likelihood × impact, prioritas, dan detail jalur uji |
 | [Sequence diagrams](docs/12-remittance-sequence-diagrams.md) | Diagram Create-to-Submit, Approval Binding, Retry, Callback, dan Reconciliation |
-| [OSCP / Bug-Hunter Field Playbook](docs/13-oscp-bughunter-field-playbook.md) | Manual API enumeration, authorization testing, request diff, workflow, idempotency, dan finding validation |
+| [API Security Testing Field Playbook](docs/13-api-security-testing-field-playbook.md) | Manual API enumeration, authorization testing, request diff, workflow, idempotency, dan finding validation |
 | [PoC Priority Scenarios](docs/14-poc-priority-scenarios.md) | Lima skenario inti, prosedur, verdict, remediation, dan demo 30 menit |
 | [Synthetic Test Data Model](docs/15-synthetic-remittance-test-data.md) | Actor/role, objek, field, state fixture, dan expected state |
 | [Evaluator Demo Run Sheet](docs/16-evaluator-demo-run-sheet.md) | Agenda, peran, checklist, live evidence timeline, dan fallback demo |
