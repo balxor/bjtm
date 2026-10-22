@@ -1,0 +1,15 @@
+# Local scratch and sensitive engagement artifacts
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.pcap
+evidence/
+raw-evidence/
+screenshots-private/
+reports-confidential/
+secrets/
+.DS_Store
+Thumbs.db
