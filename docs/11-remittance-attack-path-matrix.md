@@ -6,7 +6,7 @@ Dokumen ini digunakan untuk memilih, menjalankan, dan menilai attack path pada p
 
 Attack path adalah hipotesis pengujian, bukan pernyataan bahwa kontrol gagal. Gunakan target, akun, role, metode, dan environment dalam scope matrix serta Rules of Engagement (RoE).
 
-## 2. Metode OSCP / bug-bounty untuk API remittance
+## 2. Metodologi manual-first untuk pengujian API remittance
 
 Gunakan pendekatan manual-first. Otomasi membantu menemukan variasi, tetapi keputusan PASS/FAIL memerlukan pembuktian authorization, state, dan efek bisnis.
 
