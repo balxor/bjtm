@@ -2,7 +2,7 @@
 
 ## 1. Tujuan
 
-Model ini menyediakan entitas uji yang konsisten untuk rehearsal, eksekusi test case, evidence capture, dan retest. Seluruh nama dan identifier merupakan contoh sintetis. Jangan menggantinya dengan data rekening, pelanggan, atau transaksi nyata.
+Model ini menyediakan entitas uji yang konsisten untuk rehearsal, eksekusi test case, evidence capture, dan retest. Seluruh nama dan identifier merupakan contoh sintetis. Jangan menggantinya dengan data rekening, pelanggan, atau transaksi nyata. Gunakan model ini hanya jika aplikasi yang ditetapkan Bank mencakup remittance. Brief PoC yang tersedia menetapkan satu aplikasi uji tetapi belum menyebut nama atau arsitektur aplikasi. Objective, deliverable, dan kriteria evaluasi tercantum pada [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md).
 
 ## 2. Actor dan role
 
