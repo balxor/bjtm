@@ -1,6 +1,6 @@
 # Penetration Testing PoC Framework
 
-Framework ini digunakan untuk merencanakan dan melaksanakan Proof of Concept (PoC) penetration testing. Cakupan meliputi tata kelola pengujian, pemodelan risiko, desain test case, eksekusi terkontrol, pengelolaan evidence, pelaporan, serta retest.
+Framework ini membantu tim menyiapkan, menjalankan, dan mengevaluasi penetration testing Proof of Concept (PoC). Dokumen mencakup tata kelola, pemodelan risiko, desain test case, eksekusi, evidence, pelaporan, dan retest.
 
 ## Tujuan
 
@@ -13,29 +13,38 @@ Framework ini digunakan untuk merencanakan dan melaksanakan Proof of Concept (Po
 
 ## Struktur dokumentasi
 
-| Dokumen | Cakupan |
-|---|---|
-| [Prinsip persiapan PoC](docs/01-prinsip-persiapan-poc.md) | Prinsip kerja, status requirement, input, dan quality gate |
-| [Scope, governance, dan RoE](docs/02-scope-governance-roe.md) | Otorisasi, scope, peran, eskalasi, dan stop conditions |
-| [Remittance threat model](docs/03-remittance-threat-model.md) | Alur transaksi, trust boundaries, serta kelompok risiko remittance |
-| [Metodologi dan test case](docs/04-metodologi-test-case.md) | Siklus kerja, test-case design, dan pencatatan hasil |
-| [Evidence dan reporting](docs/05-evidence-dan-reporting.md) | Evidence chain, format laporan, dashboard, dan retest |
-| [PoC runbook](docs/06-poc-runbook.md) | Readiness, urutan demonstrasi, stop procedure, dan closeout |
-| [Tender differentiation dan scorecard](docs/07-differentiation-scorecard.md) | Kualitas teknis, demonstrasi, dan penilaian kesiapan internal |
-| [Kesiapan klien dan tim](docs/08-kesiapan-klien-dan-tim.md) | Input proyek, peran tim, dan persiapan teknis |
-| [Operating model](docs/09-operating-model.md) | Workstream, deliverable, dan quality gate |
-| [Remittance test catalog](docs/10-remittance-test-catalog.md) | Test case teknis, preconditions, expected result, evidence, serta kriteria pass/fail |
-| [Attack-path matrix](docs/11-remittance-attack-path-matrix.md) | Metode manual-first, scoring likelihood × impact, prioritas, dan detail jalur uji |
-| [Sequence diagrams](docs/12-remittance-sequence-diagrams.md) | Diagram Create-to-Submit, Approval Binding, Retry, Callback, dan Reconciliation |
-| [API Security Testing Field Playbook](docs/13-api-security-testing-field-playbook.md) | Manual API enumeration, authorization testing, request diff, workflow, idempotency, dan finding validation |
-| [PoC Priority Scenarios](docs/14-poc-priority-scenarios.md) | Lima skenario inti, prosedur, verdict, remediation, dan demo 30 menit |
-| [Synthetic Test Data Model](docs/15-synthetic-remittance-test-data.md) | Actor/role, objek, field, state fixture, dan expected state |
-| [Evaluator Demo Run Sheet](docs/16-evaluator-demo-run-sheet.md) | Agenda, peran, checklist, live evidence timeline, dan fallback demo |
-| [OWASP Top 10:2025 Mapping](docs/17-owasp-top10-2025-mapping.md) | Pemetaan kategori OWASP 2025 ke test remittance dan cakupan tambahan | 
-| [Scoring Temuan Bank Jatim](docs/18-scoring-temuan-bank-jatim.md) | Model simulasi internal 0–100 untuk triage temuan dan prioritas demo; bukan rubrik resmi |
-| [Test-case template](templates/test-case-template.md) | Format desain dan pelaksanaan test |
-| [Finding template](templates/finding-template.md) | Format temuan dan rekomendasi |
-| [Evidence-log template](templates/evidence-log-template.md) | Indeks evidence dan kontrol penyimpanan |
+### Tata kelola dan delivery
+
+- **[Prinsip persiapan PoC](docs/01-prinsip-persiapan-poc.md)**: requirement, status kesiapan, dan quality gate.
+- **[Scope, governance, dan RoE](docs/02-scope-governance-roe.md)**: otorisasi, target, peran, eskalasi, dan batas pengujian.
+- **[Remittance threat model](docs/03-remittance-threat-model.md)**: alur transaksi, trust boundary, dan kelompok risiko.
+- **[Metodologi dan test case](docs/04-metodologi-test-case.md)**: siklus pengujian dan pencatatan hasil.
+- **[Evidence dan reporting](docs/05-evidence-dan-reporting.md)**: evidence chain, laporan, dashboard, dan retest.
+- **[PoC runbook](docs/06-poc-runbook.md)**: readiness, urutan demo, stop procedure, dan closeout.
+- **[Tender differentiation dan scorecard](docs/07-differentiation-scorecard.md)**: kualitas teknis, demo, dan penilaian kesiapan tim.
+- **[Kesiapan klien dan tim](docs/08-kesiapan-klien-dan-tim.md)**: kebutuhan proyek, peran, dan persiapan teknis.
+- **[Operating model](docs/09-operating-model.md)**: workstream, deliverable, dan quality gate.
+
+### Metodologi dan skenario remittance
+
+- **[Remittance test catalog](docs/10-remittance-test-catalog.md)**: test case, preconditions, expected result, evidence, dan kriteria hasil.
+- **[Attack-path matrix](docs/11-remittance-attack-path-matrix.md)**: likelihood × impact, prioritas, dan jalur pengujian.
+- **[Sequence diagrams](docs/12-remittance-sequence-diagrams.md)**: Create-to-Submit, Approval Binding, Retry, Callback, dan Reconciliation.
+- **[API Security Testing Field Playbook](docs/13-api-security-testing-field-playbook.md)**: enumerasi API, authorization, request diff, workflow, dan validasi temuan.
+- **[PoC Priority Scenarios](docs/14-poc-priority-scenarios.md)**: lima skenario, prosedur, evidence, dan demo 30 menit.
+- **[Synthetic Test Data Model](docs/15-synthetic-remittance-test-data.md)**: actor/role, objek, field, dan state uji.
+- **[Evaluator Demo Run Sheet](docs/16-evaluator-demo-run-sheet.md)**: agenda, peran, checklist, timeline evidence, dan fallback.
+
+### OWASP 2025 dan penilaian
+
+- **[OWASP Top 10:2025 Mapping](docs/17-owasp-top10-2025-mapping.md)**: pemetaan kategori OWASP 2025 ke test remittance.
+- **[Scoring Temuan Bank Jatim](docs/18-scoring-temuan-bank-jatim.md)**: simulasi internal 0–100 untuk triage dan prioritas demo. Bukan rubrik poin resmi Bank Jatim.
+
+### Template kerja
+
+- **[Test-case template](templates/test-case-template.md)**: perencanaan dan pelaksanaan test.
+- **[Finding template](templates/finding-template.md)**: dokumentasi temuan dan rekomendasi.
+- **[Evidence-log template](templates/evidence-log-template.md)**: indeks evidence dan kontrol penyimpanan.
 
 ## Prinsip pelaksanaan
 
