@@ -2,38 +2,35 @@
 
 ## Tujuan evidence
 
-Evidence harus memungkinkan evaluator atau pemilik sistem memahami apa yang diuji, perilaku yang diamati, dampaknya, dan cara memverifikasinya tanpa mengulang aktivitas berisiko.
+Evidence mendukung reproduksi test, peninjauan hasil, penilaian dampak, serta validasi remediasi. Evidence harus terkait dengan test case dan tidak boleh memuat data yang tidak diperlukan.
 
 ## Evidence chain minimum
 
-Setiap artefak evidence harus terkait dengan:
-- Engagement / PoC ID.
-- Test case ID dan finding ID (jika ada).
-- Timestamp dengan zona waktu yang konsisten.
-- Actor/role dan test account yang digunakan.
-- Target yang memang telah disetujui.
-- Object/transaction ID sintetis.
+Catat informasi berikut untuk setiap artefak:
+- Engagement ID.
+- Test case ID dan finding ID, jika ada.
+- Timestamp beserta zona waktu.
+- Actor/role dan akun uji.
+- Target yang diuji.
+- ID objek atau transaksi sintetis.
 - Kondisi sebelum dan sesudah pengujian.
-- Hasil aktual dan expected secure behavior.
-- Nama pengumpul bukti dan reviewer.
-- Redaction status dan lokasi penyimpanan yang disetujui.
+- Observasi dan expected behavior.
+- Nama pengumpul dan reviewer.
+- Status redaction dan lokasi penyimpanan.
 
-## Praktik pengumpulan yang aman
+## Pengumpulan dan penyimpanan
 
-1. Gunakan data dan akun sintetis.
-2. Redaksi password, token, session cookie, API key, PII, dan informasi finansial.
-3. Jangan memasukkan raw evidence ke repository GitHub publik.
-4. Pertahankan versi bukti asli pada evidence vault dengan akses terbatas jika kebijakan klien mengizinkan.
-5. Buat salinan tersanitasi untuk laporan dan presentasi.
-6. Catat hash artefak bila diperlukan untuk membantu pemeriksaan integritas.
-7. Jangan membuat screenshot yang menampilkan data nasabah lain.
-8. Rekam keterbatasan dan kondisi pengujian agar hasil tidak disalahartikan.
+1. Gunakan akun uji dan data sintetis.
+2. Redaksi password, token, cookie, API key, PII, dan data finansial.
+3. Simpan raw evidence pada evidence store yang memiliki kontrol akses.
+4. Buat salinan tersanitasi untuk laporan dan presentasi.
+5. Catat hash artefak jika dibutuhkan untuk pemeriksaan integritas.
+6. Cantumkan keterbatasan bukti dan kondisi pengujian.
+7. Terapkan retensi dan penghapusan sesuai kebijakan engagement.
+8. Batasi distribusi evidence berdasarkan kebutuhan pekerjaan.
 
-## Model folder evidence
+## Struktur evidence store
 
-Gunakan struktur pada repository internal yang disetujui klien. Jangan buat folder evidence private seolah-olah aman di repository publik.
-
-Contoh struktur konseptual:
 - engagement-metadata/
 - test-cases/
 - raw-evidence-restricted/
@@ -42,51 +39,51 @@ Contoh struktur konseptual:
 - retest/
 - closeout/
 
-Raw evidence harus dibatasi aksesnya, memiliki retensi terdefinisi, dan dihapus sesuai persetujuan engagement.
+Tetapkan owner, kontrol akses, retensi, dan mekanisme penghapusan sebelum evidence dikumpulkan.
 
 ## Struktur laporan teknis
 
-1. Cover, klasifikasi, versi, dan kontrol distribusi.
+1. Cover, klasifikasi, versi, dan distribusi.
 2. Executive summary.
 3. Tujuan, scope, environment, dan batasan.
 4. Metodologi dan aturan pelaksanaan.
 5. Ringkasan cakupan pengujian.
-6. Ringkasan temuan menurut severity dan business process.
-7. Detail setiap temuan: deskripsi, bukti, dampak, akar masalah, rekomendasi.
-8. Test yang PASS, FAIL, INCONCLUSIVE, BLOCKED, dan NOT TESTED.
-9. Retest status dan pengecualian risiko.
+6. Temuan berdasarkan severity dan proses bisnis.
+7. Detail temuan: deskripsi, evidence, dampak, analisis penyebab, dan rekomendasi.
+8. Daftar test PASS, FAIL, INCONCLUSIVE, BLOCKED, dan NOT TESTED.
+9. Status retest dan pengecualian risiko.
 10. Appendix: test inventory, glossary, dan evidence index.
 
 ## Executive dashboard
 
 | Dimensi | Indikator |
 |---|---|
-| Severity | Jumlah temuan per severity setelah proses triage |
-| Business process | Risiko menurut tahap remittance yang benar-benar berada dalam scope |
+| Severity | Jumlah finding per severity |
+| Business process | Risiko pada tahapan proses yang diuji |
 | Control family | AuthN/AuthZ, transaction integrity, workflow, API, auditability, data exposure |
-| Evidence confidence | High/Medium/Low dengan alasan yang terdefinisi |
+| Evidence confidence | High/Medium/Low dengan alasan |
 | Remediation | Open, in progress, fixed, accepted risk, retest pending |
-| Coverage | Test planned vs tested vs blocked vs not tested |
-| Retest | Pass, fail, inconclusive, dan tanggal verifikasi |
+| Coverage | Planned, tested, blocked, not tested |
+| Retest | Pass, fail, inconclusive, tanggal, dan owner |
 
-Jangan mengklaim coverage 100% kecuali definisi scope, denominator, pengecualian, serta metode coverage dijelaskan.
+Jelaskan denominator serta pengecualian saat melaporkan coverage. Jangan menyimpulkan keamanan keseluruhan sistem dari cakupan test yang terbatas.
 
-## Kualitas temuan
+## Kualitas finding
 
-Sebuah finding yang baik:
-- Menjelaskan fakta observasi dengan bahasa yang dapat direproduksi.
-- Memetakan dampak potensial pada transaksi, fraud exposure, confidentiality, integrity, availability, atau auditability yang relevan.
-- Memisahkan root cause yang terverifikasi dari dugaan.
-- Menetapkan rekomendasi berurutan: containment, perbaikan teknis, compensating control, serta perbaikan jangka panjang.
-- Menyebutkan retest criteria yang terukur.
+Setiap finding harus:
+- Menjelaskan observasi dan langkah reproduksi yang sesuai scope.
+- Menghubungkan dampak dengan kerahasiaan, integritas, ketersediaan, transaksi, fraud exposure, atau auditability.
+- Memisahkan penyebab yang didukung evidence dari hipotesis.
+- Menetapkan containment, perbaikan teknis, compensating control, dan tindakan jangka panjang bila relevan.
+- Menetapkan owner, prioritas, serta acceptance criteria retest.
 
 ## Retest criteria
 
-Kriteria retest ditetapkan saat temuan ditulis, bukan setelah perbaikan selesai. Contoh:
-- Request tanpa kewenangan selalu ditolak server-side dan tidak membocorkan isi objek.
-- Atribut transaksi kritis hanya dapat diubah melalui state/role yang diizinkan.
-- Transisi approval yang tidak valid ditolak serta meninggalkan audit trail yang konsisten.
-- Event keamanan dan transaksi uji dapat dikorelasikan pada log yang ditetapkan.
-- Test case awal dan negative-control case menghasilkan hasil sesuai ekspektasi.
+Tentukan kriteria retest saat finding dibuat. Contoh:
+- Request tanpa otorisasi ditolak di server dan tidak mengembalikan data objek.
+- Atribut transaksi kritis hanya dapat diubah melalui role dan state yang diizinkan.
+- Transisi approval yang tidak valid ditolak dan tercatat.
+- Aktivitas uji dapat dikorelasikan dengan event log yang relevan.
+- Test case awal dan negative-control case menghasilkan output sesuai expected behavior.
 
-Retest hanya pada scope dan environment yang disetujui ulang bila perubahan memerlukannya.
+Retest dilakukan dalam scope dan environment yang ditetapkan untuk engagement.
