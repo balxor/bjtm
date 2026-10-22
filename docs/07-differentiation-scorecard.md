@@ -17,17 +17,16 @@ Hindari klaim absolut seperti “100% secure”, “zero risk”, atau jaminan b
 
 ## Internal readiness scorecard
 
-Gunakan bobot ini untuk latihan internal jika rubric evaluasi resmi tidak menetapkan bobot berbeda. Rubric resmi menjadi acuan penilaian tender.
+Dokumen jadwal Bank Jatim menyebut enam aspek evaluasi tanpa bobot angka. Bobot di bawah adalah **bobot rehearsal internal untuk melatih tim pada keenam aspek tersebut**, bukan bobot resmi tender. Rubrik resmi menjadi acuan penilaian tender.
 
-| Area | Bobot internal | Pertanyaan reviewer |
+| Area | Bobot rehearsal internal | Pertanyaan reviewer |
 |---|---:|---|
-| Scope dan RoE readiness | 15% | Apakah batas pengujian jelas dan dipahami tim? |
-| Pemahaman risiko bisnis | 15% | Apakah risiko proses transaksi dijelaskan secara tepat? |
-| Kualitas attack hypothesis | 15% | Apakah hipotesis dapat diuji dan memiliki expected behavior? |
-| Kedalaman teknis | 20% | Apakah test menguji kontrol server-side dan alur bisnis? |
-| Kualitas evidence | 15% | Apakah orang lain dapat meninjau dan mengulang test dengan aman? |
-| Remediasi dan retest | 10% | Apakah perbaikan dapat dilaksanakan dan diukur? |
-| Presentasi dan komunikasi | 10% | Apakah demo jelas, aman, dan relevan? |
+| Metodologi dan kepatuhan RoE | 20% | Apakah pendekatan, urutan kerja, cakupan, dan batas pengujian sesuai? |
+| Pengalaman proyek relevan | 15% | Apakah tim dapat menunjukkan pengalaman VAPT sejenis dengan bukti pendukung? |
+| Kompetensi tim | 15% | Apakah peran, kemampuan teknis, dan penguasaan personel jelas? |
+| Tools dan interpretasi hasil | 10% | Apakah tools relevan dan hasilnya divalidasi secara kritis? |
+| Kualitas laporan dan rekomendasi | 25% | Apakah evidence lengkap, temuan dapat diulang, risk rating beralasan, dampak jelas, dan rekomendasi dapat diterapkan? |
+| Presentasi dan komunikasi teknis | 15% | Apakah hasil disampaikan dengan jelas dan tim mampu menjawab pertanyaan teknis? |
 | **Total** | **100%** | |
 
 ## Skala penilaian internal
