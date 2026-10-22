@@ -6,7 +6,7 @@ Gunakan [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriter
 
 Dokumen jadwal menyebut periode 26–30 Oktober 2026, tetapi beberapa halaman berbeda dalam pembagian hari pengujian dan presentasi. Dapatkan konfirmasi tertulis mengenai tanggal pengujian, tanggal presentasi, slot 90 menit per peserta, dan tenggat laporan sebelum mengunci runbook.
 
-## 0. Authorization gate
+## 1. Authorization gate
 
 - [ ] Otorisasi tertulis tersedia.
 - [ ] Scope dan exclusions ditetapkan.
@@ -16,7 +16,7 @@ Dokumen jadwal menyebut periode 26–30 Oktober 2026, tetapi beberapa halaman be
 - [ ] Emergency contact dan jalur eskalasi tersedia.
 - [ ] Evidence store dan aturan retensi ditetapkan.
 
-## 1. Environment readiness
+## 2. Environment readiness
 
 - [ ] Diagram arsitektur dan data-flow tersedia.
 - [ ] Daftar URL/IP/API sesuai scope.
@@ -27,11 +27,11 @@ Dokumen jadwal menyebut periode 26–30 Oktober 2026, tetapi beberapa halaman be
 - [ ] Evidence naming dan redaction telah dicoba.
 - [ ] Cleanup dan rollback procedure tersedia.
 
-## 1A. Klasifikasi finding dan prioritas demo
+## 3. Klasifikasi finding dan prioritas demo
 
 Sebelum menetapkan urutan demonstrasi, petakan test ke [OWASP Top 10:2025](17-owasp-top10-2025-mapping.md), nilai dampak berdasarkan evidence, dan periksa kesiapan environment serta guardrail. Untuk latihan prioritas, rujuk [Scoring Temuan untuk Persiapan Evaluasi Bank Jatim](18-scoring-temuan-bank-jatim.md); skor tersebut adalah simulasi internal, bukan nilai resmi tender.
 
-## 2. Urutan demonstrasi
+## 4. Urutan demonstrasi
 
 Untuk setiap skenario:
 
@@ -46,7 +46,7 @@ Untuk setiap skenario:
 9. Jelaskan acceptance criteria untuk retest.
 10. Periksa efek samping dan selesaikan cleanup.
 
-## 3. Rencana waktu
+## 5. Rencana waktu
 
 Lengkapi durasi, owner, dan exit criteria sesuai alokasi PoC.
 
@@ -60,7 +60,7 @@ Lengkapi durasi, owner, dan exit criteria sesuai alokasi PoC.
 | Ringkasan hasil | TBD | Reporting lead | Temuan awal ditinjau |
 | Cleanup dan closeout | TBD | Tim + system owner | Rekonsiliasi dan sign-off |
 
-## 4. Evidence naming convention
+## 6. Evidence naming convention
 
 Format:
 
@@ -73,7 +73,7 @@ Contoh:
 
 Gunakan timestamp dan zona waktu yang konsisten. Hindari nama nasabah, nomor rekening, token, dan data finansial pada nama file.
 
-## 5. Stop procedure
+## 7. Stop procedure
 
 Hentikan aktivitas terkait jika:
 - Transaksi nyata berpotensi diproses atau dana berpindah.
@@ -90,7 +90,7 @@ Setelah stop:
 - Amankan evidence sesuai prosedur.
 - Lanjutkan hanya setelah mitigasi dan izin untuk melanjutkan disetujui.
 
-## 6. Closeout
+## 8. Closeout
 
 - [ ] Semua test case memiliki status dan hasil.
 - [ ] Transaksi/objek uji direkonsiliasi dengan pemilik sistem.
