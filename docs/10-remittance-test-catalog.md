@@ -26,11 +26,7 @@ Jangan gunakan identifier rekening atau data pelanggan nyata dalam dataset PoC.
 ## 3. Test catalog ringkas
 
 | Test ID | Domain | Tujuan | Data/komponen | OWASP Top 10:2025 | Prioritas awal |
-| RT-CFG-01 | Security configuration | Memeriksa konfigurasi, route, debug, dan policy yang terekspos | Gateway/service dalam scope | A02:2025 | P1/P2 |
-| RT-SC-01 | Software supply chain | Memeriksa dependency/build/release integrity yang disetujui | Repo, SBOM, pipeline atau artefak jika in scope | A03:2025 | Conditional |
-| RT-CRYPTO-01 | Cryptographic controls | Memeriksa perlindungan data dan lifecycle key/secret yang termasuk scope | TLS/config/secret test fixture | A04:2025 | P1/P2 |
-| RT-INJ-01 | Injection | Menguji penanganan input pada parser/query/interpreter di endpoint terpilih | Synthetic input dan endpoint yang disetujui | A05:2025 | P1/P2 |
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 | RT-AUTH-01 | Object authorization | Membatasi akses per objek | Dua akun, dua beneficiary/transaksi | A01:2025 | P1 |
 | RT-AUTH-02 | Function authorization | Membatasi tindakan berdasarkan role | Maker, checker, admin/support bila tersedia | A01:2025, A07:2025 | P1 |
 | RT-TXN-01 | Transaction integrity | Memastikan properti finansial divalidasi server-side | Transaksi sintetis | A06:2025, A08:2025 | P1 |
@@ -46,8 +42,12 @@ Jangan gunakan identifier rekening atau data pelanggan nyata dalam dataset PoC.
 | RT-LOG-01 | Auditability | Mencatat event keamanan dan transaksi | Audit logs/SIEM | A09:2025 | P2 |
 | RT-API-01 | API inventory/configuration | Memeriksa route, version, dan policy | Approved API inventory | A02:2025 | P2 |
 | RT-ABUSE-01 | Sensitive business flows | Menguji abuse guardrail pada fungsi sensitif | Test account dan rate limit sandbox | A06:2025, A10:2025 | P2 |
+| RT-CFG-01 | Security configuration | Memeriksa konfigurasi, route, debug, dan policy yang terekspos | Gateway/service dalam scope | A02:2025 | P1/P2 |
+| RT-SC-01 | Software supply chain | Memeriksa dependency/build/release integrity yang disetujui | Repo, SBOM, pipeline atau artefak jika in scope | A03:2025 | Conditional |
+| RT-CRYPTO-01 | Cryptographic controls | Memeriksa perlindungan data dan lifecycle key/secret yang termasuk scope | TLS/config/secret test fixture | A04:2025 | P1/P2 |
+| RT-INJ-01 | Injection | Menguji penanganan input pada parser/query/interpreter di endpoint terpilih | Synthetic input dan endpoint yang disetujui | A05:2025 | P1/P2 |
 
-Priority P1/P2 merupakan urutan awal untuk perencanaan, bukan severity hasil. Tentukan ulang berdasarkan business impact, exposure, desain aktual, dan kriteria evaluasi.
+Priority P1/P2 merupakan urutan awal untuk perencanaan, bukan severity hasil. Tentukan ulang berdasarkan business impact, exposure, desain aktual, dan kriteria evaluasi. RT-SC-01 hanya berlaku jika repository, dependency, SBOM, pipeline, atau artefak release masuk scope.
 
 ## 4. Test cases
 
@@ -547,21 +547,18 @@ Sebelum test dilaksanakan, isi kolom berikut:
 
 ## 7. Keterkaitan dengan standar
 
-Mapping berikut merupakan titik awal pemetaan kontrol, bukan pengganti requirement resmi engagement.
+Gunakan OWASP Top 10:2025 untuk klasifikasi risiko aplikasi web. Gunakan OWASP API Security Top 10:2023 sebagai referensi pelengkap untuk risiko khusus API. Terapkan ASVS dan WSTG sesuai teknologi, requirement, dan scope engagement.
 
-| Test domain | Reference umum |
+| Area | Referensi |
 |---|---|
-| Object-level authorization, function authorization, property control | OWASP API Security Top 10 2023 |
-| Authentication, session, access control, validation, logging | OWASP ASVS 5.0.0 |
-| Business logic, workflow, state transition | OWASP Web Security Testing Guide, Business Logic Testing |
-| API inventory, configuration, downstream trust | OWASP API Security Top 10 2023 |
-| Requirement verification dan evidence record | OWASP ASVS 5.0.0 |
+| Klasifikasi risiko aplikasi web | [OWASP Top 10:2025](https://top10.owasp.org/2025/) |
+| Risiko khusus API | [OWASP API Security Top 10:2023](https://api-security.owasp.org/editions/2023/en/0x11-t10/) |
+| Requirement verifikasi aplikasi | [OWASP ASVS](https://asvs.owasp.org/) |
+| Pengujian business logic dan workflow | [OWASP Web Security Testing Guide](https://wstg.org/) |
+| Pemetaan test case dan kategori | [OWASP Top 10:2025 Mapping](17-owasp-top10-2025-mapping.md) |
+| Prioritas temuan untuk latihan internal | [Scoring Temuan Bank Jatim](18-scoring-temuan-bank-jatim.md) |
 
-- [OWASP API Security Top 10](https://owasp.org/API-Security/)
-- [OWASP ASVS 5.0.0](https://asvs.owasp.org/)
-- [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
-
-Catat identifier requirement standar yang digunakan pada test-case register dan tentukan acceptance criteria secara eksplisit.
+Catat requirement dan test identifier yang digunakan pada test-case register. Tetapkan acceptance criteria sebelum test dijalankan. Kategori OWASP mengklasifikasikan risiko; kategori tersebut tidak menentukan skor tender.
 
 
 ## OWASP Top 10:2025 alignment
