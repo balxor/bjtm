@@ -40,9 +40,9 @@ Beri nilai setiap dimensi dari 1 sampai 5, lalu hitung:
 |---:|---|---|
 | 85–100 | A: Prioritas demo tertinggi | Kandidat utama jika scope, safety, dan evidence siap |
 | 70–84 | B: Prioritas tinggi | Kandidat demo atau pembuktian lanjutan |
-| 50–69 | C: Prioritas menengah | Masuk laporan; demo jika relevan dengan waktu dan rubric |
-| 30–49 | D: Prioritas rendah | Catat dan kelompokkan; jangan menggeser kasus berisiko tinggi tanpa alasan |
-| 0–29 | E: Informasional | Catat bila berguna, biasanya bukan skenario demo utama |
+| 55–69 | C: Prioritas menengah | Masuk laporan; demo jika relevan dengan waktu dan rubric |
+| 40–54 | D: Prioritas rendah | Catat dan kelompokkan; jangan menggeser kasus berisiko tinggi tanpa alasan |
+| 20–39 | E: Informasional / sangat rendah | Catat bila berguna, biasanya bukan skenario demo utama |
 
 Gunakan faktor sesuai evidence aktual. Skor tidak boleh dinaikkan dengan mengasumsikan jumlah customer, nilai transaksi, atau kerugian yang tidak dibuktikan. Temuan yang hanya mengungkap banner/version atau error detail tanpa data sensitif, bypass kontrol, atau jalur serangan yang terbukti dibatasi maksimal **39/100** dalam simulasi ini.
 
@@ -56,7 +56,7 @@ Angka berikut adalah contoh latihan berdasarkan rumus internal di atas. Angka te
 | Satu logical transaction menyebabkan dua dispatch/posting dalam mock connector setelah retry | A06, A08, A10 | 5 / 5 / 3 / 3 / 5 / 4 | 88 | A |
 | Actor yang tidak berwenang dapat melewati fungsi approval pada workflow uji | A01, A06, A07 | 5 / 5 / 3 / 3 / 5 / 4 | 88 | A |
 | Callback yang tidak lolos pemeriksaan integritas mengubah status transaksi menjadi sukses pada simulator | A07, A08, A10 | 5 / 4 / 3 / 3 / 5 / 4 | 83 | B |
-| Akun A dapat membaca detail transaksi sensitif sintetis milik akun B | A01, A04 | 4 / 3 / 4 / 4 / 5 / 3 | 75 | B |
+| Akun A dapat membaca detail transaksi sensitif sintetis milik akun B | A01 | 4 / 3 / 4 / 4 / 5 / 3 | 75 | B |
 | Event perubahan transaksi inti tidak memiliki audit trail atau alert yang disyaratkan | A09 | 3 / 3 / 3 / 3 / 4 / 5 | 66 | C |
 | Informasi banner atau error detail tanpa data sensitif dan tanpa jalur eksploitasi lanjutan | A02 atau A10, sesuai root cause | 1 / 1 / 5 / 2 / 4 / 2 | 39 (dibatasi) | D |
 
