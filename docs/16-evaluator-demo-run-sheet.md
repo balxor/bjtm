@@ -188,4 +188,4 @@ Rehearsal evidence dapat menunjukkan kesiapan metode, tetapi tidak boleh disajik
 - [Remittance Test Catalog](10-remittance-test-catalog.md)
 - [Attack-Path Matrix](11-remittance-attack-path-matrix.md)
 - [Sequence Diagrams](12-remittance-sequence-diagrams.md)
-- [OSCP / Bug-Hunter Field Playbook](13-oscp-bughunter-field-playbook.md)
+- [API Security Testing Field Playbook](13-api-security-testing-field-playbook.md)
