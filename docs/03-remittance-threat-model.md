@@ -426,8 +426,8 @@ Remediasi final harus mengikuti hasil root-cause analysis dan desain aplikasi.
 
 Gunakan standar berikut sebagai acuan untuk memetakan requirement ke test case. Pilih requirement spesifik sesuai teknologi dan scope engagement.
 
-- [OWASP API Security Top 10 - 2023](https://owasp.org/API-Security/): authorization, authentication, property-level controls, resource consumption, business flow abuse, konfigurasi API, inventory, dan trust terhadap API downstream.
+- [OWASP API Security Top 10 2023](https://api-security.owasp.org/editions/2023/en/0x11-t10/): authorization, authentication, property-level controls, resource consumption, sensitive business flows, API inventory, dan unsafe consumption of APIs.
 - [OWASP Application Security Verification Standard (ASVS) 5.0.0](https://asvs.owasp.org/): requirement verifikasi keamanan aplikasi web dan service.
-- [OWASP Web Security Testing Guide - Business Logic Testing](https://owasp.org/www-project-web-security-testing-guide/): validasi business logic, integrity checks, batas penggunaan fungsi, dan pengujian workflow.
+- [OWASP Web Security Testing Guide 4.2: Business Logic Testing](https://wstg.owasp.org/stable/4-Web_Application_Security_Testing/10-Business_Logic_Testing/): data validation, request forgery, integrity checks, process timing, limits, workflow circumvention, dan payment functionality.
 
-Catat versi standar serta identifier requirement pada test-case register bila digunakan sebagai acceptance criteria.
+Untuk detail test case, gunakan [Remittance Test Catalog](10-remittance-test-catalog.md), [Attack-Path Matrix](11-remittance-attack-path-matrix.md), dan [Sequence Diagrams](12-remittance-sequence-diagrams.md). Catat identifier requirement dan acceptance criteria pada test-case register.
