@@ -1,6 +1,6 @@
 # Test Case Template
 
-Gunakan template ini untuk setiap test case. Isi target dan prosedur sesuai scope, akun, environment, serta metode yang tercantum dalam RoE.
+Gunakan template ini untuk setiap test case. Isi target dan prosedur sesuai scope, akun, environment, serta metode dalam Rules of Engagement (RoE).
 
 ## Metadata
 
@@ -16,7 +16,7 @@ Gunakan template ini untuk setiap test case. Isi target dan prosedur sesuai scop
 
 - **Business objective:**
 - **Threat / hypothesis:**
-- **Control expected:**
+- **Expected control:**
 - **Business process / asset:**
 
 ## Scope dan preconditions
