@@ -2,6 +2,8 @@
 
 ## 1. Tujuan
 
+Gunakan diagram ini hanya bila aplikasi uji yang ditetapkan Bank mencakup remittance. Dokumen jadwal PoC Bank Jatim menyebut satu aplikasi uji, tetapi belum mengidentifikasi aplikasi atau arsitektur teknisnya. Untuk objective dan kriteria resmi, lihat [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md).
+
 Dokumen ini memetakan urutan interaksi antar-komponen dari pembuatan transaksi sampai rekonsiliasi. Sequence adalah arsitektur referensi. Sesuaikan nama endpoint, service, event, state, dan policy dengan desain aktual sebelum menggunakan diagram sebagai test oracle.
 
 Semua test memakai akun dan data sintetis, serta dilakukan pada environment yang tercantum dalam Rules of Engagement (RoE). Alur yang dapat mengirim instruksi ke payment rail harus menggunakan sandbox atau kontrol non-settlement yang disetujui pemilik sistem.
