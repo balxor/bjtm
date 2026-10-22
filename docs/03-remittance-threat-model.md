@@ -1,67 +1,62 @@
 # Remittance Threat Model
 
-## Tujuan dan batasan
+## Tujuan
 
-Dokumen ini adalah model ancaman konseptual untuk merancang pengujian pada sistem remittance. Ini **bukan representasi arsitektur Bank Jatim**. Sesuaikan alur, aktor, sistem, serta kontrol setelah memperoleh diagram dan requirement yang disetujui.
+Threat model ini membantu menyusun pengujian keamanan pada sistem remittance. Sesuaikan aktor, komponen, alur, dan kontrol dengan arsitektur serta proses bisnis pada engagement.
 
 ## Alur bisnis konseptual
 
-1. User mengakses channel dan melakukan autentikasi.
-2. User membuat atau memilih penerima/beneficiary.
-3. Sistem memvalidasi data, limit, fee/FX, serta aturan yang relevan.
-4. Transaksi dibuat dan disimpan sebagai status awal.
-5. Approval dijalankan sesuai model kewenangan, misalnya maker-checker jika memang diterapkan.
-6. Transaksi dikirim melalui integrasi/payment rail yang disetujui.
-7. Status, notifikasi, audit log, dan rekonsiliasi diperbarui.
-8. Exception, reversal, atau dispute ditangani melalui proses yang terdefinisi.
+1. Pengguna melakukan autentikasi melalui channel.
+2. Pengguna membuat atau memilih beneficiary.
+3. Sistem memvalidasi data penerima, limit, biaya, nilai tukar, dan aturan bisnis yang berlaku.
+4. Instruksi transaksi dibuat dan dicatat pada status awal.
+5. Approval dilakukan sesuai pemisahan kewenangan, termasuk maker-checker jika diterapkan.
+6. Instruksi diteruskan ke integrasi atau payment rail yang digunakan.
+7. Status transaksi, notifikasi, audit log, dan rekonsiliasi diperbarui.
+8. Exception, reversal, atau dispute ditangani sesuai workflow operasional.
 
-Setiap langkah harus diverifikasi terhadap proses aktual sebelum test plan disahkan.
+Verifikasi setiap langkah terhadap proses bisnis yang masuk scope sebelum menyusun test case.
 
-## Trust boundaries yang perlu dipetakan
+## Trust boundaries
 
-- Client/browser/mobile app ke channel/backend.
+Petakan komponen dan aliran data pada batas berikut:
+- Client/browser/mobile app ke channel dan backend.
 - Channel/API gateway ke service layer.
-- Service remittance ke sistem core/payment/integration.
-- Identitas dan session management ke fungsi transaksi.
-- Maker/checker/admin/support serta batas antar-role.
+- Service remittance ke core banking, payment service, atau integration layer.
+- Identity/session management ke fungsi transaksi.
+- Maker, checker, administrator, dan support.
 - Transaction processing ke logging, monitoring, dan reconciliation.
-- Vendor/third-party integration jika tercantum dalam scope.
+- Vendor atau third-party integration yang termasuk scope.
 
 ## Aset dan tujuan keamanan
 
-| Aset | Tujuan keamanan | Pertanyaan pengujian |
+| Aset | Tujuan keamanan | Fokus pengujian |
 |---|---|---|
-| Identitas/session | Kerahasiaan dan autentisitas | Apakah session/token ditangani dan dibatasi dengan benar? |
-| Customer/beneficiary | Kerahasiaan dan integritas | Apakah akses dibatasi pada objek yang diotorisasi? |
-| Instruksi transaksi | Integritas | Apakah amount, currency, fee, beneficiary, reference, dan status divalidasi server-side? |
-| Approval | Otorisasi dan non-repudiation | Apakah approval hanya dilakukan role berwenang dan pada state yang benar? |
-| Transaction status | Integritas dan konsistensi | Apakah transisi status dibatasi dan konsisten di seluruh komponen? |
-| Audit trail | Akuntabilitas | Apakah tindakan penting dicatat dan dapat ditelusuri? |
-| Integration messages | Integritas dan autentisitas | Apakah trust boundary dan validasi pesan dijaga? |
+| Identitas dan session | Kerahasiaan dan autentisitas | Lifecycle token, session binding, expiry, dan privilege |
+| Customer dan beneficiary | Kerahasiaan dan integritas | Akses berdasarkan owner dan role |
+| Instruksi transaksi | Integritas | Validasi amount, currency, fee, beneficiary, reference, dan state |
+| Approval | Otorisasi dan akuntabilitas | Pemisahan tugas serta approval pada state yang benar |
+| Transaction status | Integritas dan konsistensi | Transisi status dan sinkronisasi antarservice |
+| Audit trail | Akuntabilitas | Kelengkapan dan korelasi event |
+| Integration messages | Integritas dan autentisitas | Validasi pesan, trust boundary, serta penanganan error |
 
-## Keluarga hipotesis pengujian
+## Kelompok hipotesis pengujian
 
-Semua skenario berikut bersifat usulan dan hanya berlaku jika disetujui dalam scope.
+Skenario berikut merupakan kandidat test. Sertakan dalam rencana hanya jika sesuai scope dan RoE.
 
-| ID | Hipotesis | Dampak yang hendak dinilai | Validasi aman |
+| ID | Hipotesis | Dampak yang dinilai | Metode validasi |
 |---|---|---|---|
-| RT-AUTH-01 | Otorisasi object-level mungkin tidak konsisten | Akses lintas pengguna terhadap objek transaksi/beneficiary | Gunakan dua akun uji dan objek sintetis yang telah ditetapkan |
-| RT-ROLE-01 | Pemisahan maker/checker/admin mungkin lemah | Approval atau administrasi di luar kewenangan | Gunakan akun per-role; jangan memproses dana nyata |
-| RT-INT-01 | Atribut kritis transaksi mungkin tidak divalidasi server-side | Perubahan instruksi tanpa kontrol yang semestinya | Gunakan transaksi sintetis dan pastikan jalur tidak dapat settlement |
-| RT-WF-01 | State transition mungkin tidak dibatasi | Bypass workflow atau approval | Validasi transisi state pada environment aman |
-| RT-REPLAY-01 | Duplicate/replay protection mungkin tidak memadai | Pemrosesan ganda atau status tidak konsisten | Hanya pada harness/transaction sandbox dengan batas yang disetujui |
-| RT-API-01 | Kontrol API mungkin tidak sama kuat pada semua endpoint | Akses atau aksi tak sah | Bandingkan perilaku terhadap role dan resource uji |
-| RT-LOG-01 | Event penting mungkin tidak tercatat lengkap | Kesenjangan deteksi dan audit | Cocokkan aktivitas uji dengan audit/SIEM yang disetujui |
-| RT-DATA-01 | Respons atau export mungkin mengekspos data berlebih | Paparan PII/financial data | Gunakan dataset sintetis; cek redaction dan minimisasi |
+| RT-AUTH-01 | Otorisasi object-level tidak diterapkan secara konsisten | Akses lintas pengguna ke transaksi atau beneficiary | Gunakan dua akun uji dan objek sintetis |
+| RT-ROLE-01 | Pemisahan maker/checker/admin tidak diterapkan secara memadai | Approval atau administrasi di luar kewenangan | Gunakan akun per-role pada environment uji |
+| RT-INT-01 | Atribut kritis transaksi tidak divalidasi di server | Instruksi transaksi dapat berubah tanpa kontrol yang semestinya | Gunakan transaksi sintetis dan jalur tanpa settlement |
+| RT-WF-01 | Transisi workflow tidak dibatasi menurut state | Bypass approval atau perubahan status yang tidak sah | Validasi transisi pada environment uji |
+| RT-REPLAY-01 | Proteksi duplicate/replay tidak memadai | Pemrosesan ganda atau status tidak konsisten | Gunakan harness/sandbox dan batas pengujian yang ditetapkan |
+| RT-API-01 | Enforcement kontrol API berbeda antarendpoint | Akses atau aksi tanpa otorisasi | Uji kombinasi role dan resource uji |
+| RT-LOG-01 | Event penting tidak dicatat secara lengkap | Kesenjangan monitoring dan audit | Korelasikan aktivitas uji dengan log yang tersedia |
+| RT-DATA-01 | Respons atau export mengembalikan data berlebih | Paparan PII atau data finansial | Gunakan dataset sintetis dan evaluasi minimisasi data |
 
 ## Prioritisasi
 
-Nilai skenario berdasarkan:
-- Dampak bisnis/transaksi jika hipotesis terbukti.
-- Relevansi dengan scope dan kriteria tender.
-- Kelayakan demonstrasi di environment yang tersedia.
-- Risiko operasional selama pengujian.
-- Kualitas bukti yang dapat dikumpulkan.
-- Relevansi remediasi dan retest.
+Nilai skenario berdasarkan dampak bisnis, kemungkinan penyalahgunaan, relevansi dengan requirement, kelayakan pengujian, risiko operasional, kualitas evidence, serta kemampuan melakukan retest.
 
-Jangan menyimpulkan suatu kelemahan ada hanya karena masuk threat model. Status awal setiap hipotesis adalah **belum diuji**.
+Keberadaan hipotesis di threat model tidak berarti kelemahan telah ditemukan. Hasil hanya dapat ditetapkan setelah test case dijalankan dan evidence ditinjau.
