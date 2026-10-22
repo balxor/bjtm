@@ -40,6 +40,12 @@ Gunakan bobot ini untuk latihan internal jika rubric evaluasi resmi tidak meneta
 
 Skor berbobot = nilai area / 5 × bobot area. Sertakan evidence pendukung setiap nilai.
 
+## Skor finding dan skor kesiapan tim adalah dua hal berbeda
+
+Internal readiness scorecard di atas mengukur kesiapan tim dan kualitas pelaksanaan. Skor itu tidak sama dengan severity kerentanan, attack-path risk score, atau nilai tender yang ditetapkan evaluator.
+
+Untuk memilih temuan yang akan dibawa ke demo, gunakan [Scoring Temuan untuk Persiapan Evaluasi Bank Jatim](18-scoring-temuan-bank-jatim.md). Model 0–100 pada dokumen itu merupakan simulasi internal sampai tim memperoleh rubric resmi. OWASP Top 10:2025 menjadi klasifikasi risiko, bukan tabel poin bug.
+
 ## Demo storyboard
 
 ### 1. Business objective
