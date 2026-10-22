@@ -13,9 +13,9 @@ Untuk risiko yang khusus pada API, gunakan [OWASP API Security Top 10:2023](http
 | Kode | Kategori resmi | Fokus untuk remittance | Test case yang terkait |
 |---|---|---|---|
 | A01:2025 | Broken Access Control | Akses lintas customer/tenant, fungsi role, object/property authorization, approval dan pembatasan operasi | RT-AUTH-01, RT-AUTH-02, RT-DATA-01 |
-| A02:2025 | Security Misconfiguration | Konfigurasi gateway/service, route terbuka, debug/error detail, CORS, default configuration, serta policy yang tidak konsisten | RT-API-01, RT-IAM-01, RT-INT-01 |
+| A02:2025 | Security Misconfiguration | Konfigurasi gateway/service, route terbuka, debug/error detail, CORS, default configuration, serta policy yang tidak konsisten | RT-API-01, RT-CFG-01, RT-INT-01 |
 | A03:2025 | Software Supply Chain Failures | Dependency dan package, sumber artefak, build/release pipeline, hak akses CI/CD, signing/provenance | Perlu test tambahan bila source code, pipeline, atau dependency masuk scope |
-| A04:2025 | Cryptographic Failures | Perlindungan data sensitif saat transit/tersimpan, pengelolaan key/secret, token dan material kriptografi | RT-IAM-01, RT-DATA-01; perlu test crypto khusus sesuai scope |
+| A04:2025 | Cryptographic Failures | Perlindungan data sensitif saat transit/tersimpan, pengelolaan key/secret, token dan material kriptografi | RT-CRYPTO-01 |
 | A05:2025 | Injection | Input yang mencapai query, interpreter, template, command, atau parser tanpa penanganan yang aman | Perlu test input/injection khusus pada komponen yang diizinkan |
 | A06:2025 | Insecure Design | Kelemahan business logic, aturan limit, separation of duties, approval binding, dan penyalahgunaan flow sensitif | RT-TXN-01, RT-WF-01, RT-IDEM-01, RT-LIM-01, RT-FX-01, RT-ABUSE-01 |
 | A07:2025 | Authentication Failures | Login/session lifecycle, token validation, identity antarservice, autentikasi callback, dan pemulihan akun sesuai scope | RT-IAM-01, RT-AUTH-02, RT-CB-01 |
@@ -39,11 +39,15 @@ Pemetaan di atas merupakan hubungan kerja yang relevan untuk pengujian remittanc
 | RT-CB-01 | Callback authenticity / duplicate event | A07, A08, A10 | API2:2023, API8:2023, API10:2023 |
 | RT-INT-01 | Downstream timeout / retry | A08, A10 | API10:2023 |
 | RT-REC-01 | Reconciliation / ledger consistency | A08, A09, A10 | API10:2023 |
-| RT-IAM-01 | Token, session, service identity | A02, A04, A07 | API2:2023, API8:2023 |
-| RT-DATA-01 | Data exposure | A01, A04 | API3:2023 |
+| RT-IAM-01 | Token, session, service identity | A07 | API2:2023, API8:2023 |
+| RT-DATA-01 | Data exposure | A01 | API3:2023 |
 | RT-LOG-01 | Audit event / correlation | A09 | API10:2023 |
-| RT-API-01 | Inventory / version / configuration | A02, A03 | API8:2023, API9:2023 |
+| RT-API-01 | Inventory / version / configuration | A02 | API8:2023, API9:2023 |
 | RT-ABUSE-01 | Sensitive business-flow abuse | A06, A10 | API4:2023, API6:2023 |
+| RT-CFG-01 | Security configuration | A02 | API8:2023 |
+| RT-SC-01 | Software supply chain (conditional) | A03 | API8:2023 |
+| RT-CRYPTO-01 | Cryptographic controls | A04 | API2:2023, API8:2023 |
+| RT-INJ-01 | Injection handling | A05 | API8:2023 |
 
 Kategori dapat lebih dari satu bila temuan menunjukkan beberapa akar masalah. Pilih kategori utama berdasarkan root cause yang didukung evidence, lalu tambahkan kategori sekunder jika perlu. Jangan mengklasifikasikan temuan hanya dari nama test case.
 
