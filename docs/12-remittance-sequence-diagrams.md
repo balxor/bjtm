@@ -17,6 +17,7 @@ sequenceDiagram
     actor Maker as Maker / Customer
     participant API as API Gateway
     participant IAM as IAM / Policy
+    actor Checker as Checker
     participant ORCH as Remittance API
     participant RULE as Limit / Fee / FX
     participant BEN as Beneficiary Service
@@ -49,7 +50,6 @@ sequenceDiagram
         API-->>Maker: Approval status
     end
 
-    actor Checker as Checker
     Checker->>API: Approve transaction
     API->>IAM: Validate checker identity and role
     IAM-->>API: Checker permitted
