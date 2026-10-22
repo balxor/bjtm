@@ -1,5 +1,11 @@
 # PoC Runbook
 
+## 0. Objective dan jadwal
+
+Gunakan [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md) sebagai acuan objective, metodologi, deliverable, kriteria evaluasi, dan RoE.
+
+Dokumen jadwal menyebut periode 26–30 Oktober 2026, tetapi beberapa halaman berbeda dalam pembagian hari pengujian dan presentasi. Dapatkan konfirmasi tertulis mengenai tanggal pengujian, tanggal presentasi, slot 90 menit per peserta, dan tenggat laporan sebelum mengunci runbook.
+
 ## 0. Authorization gate
 
 - [ ] Otorisasi tertulis tersedia.
