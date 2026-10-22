@@ -25,23 +25,23 @@ Jangan gunakan identifier rekening atau data pelanggan nyata dalam dataset PoC.
 
 ## 3. Test catalog ringkas
 
-| Test ID | Domain | Tujuan | Data/komponen | Prioritas awal |
+| Test ID | Domain | Tujuan | Data/komponen | OWASP Top 10:2025 | Prioritas awal |
 |---|---|---|---|---|
-| RT-AUTH-01 | Object authorization | Membatasi akses per objek | Dua akun, dua beneficiary/transaksi | P1 |
-| RT-AUTH-02 | Function authorization | Membatasi tindakan berdasarkan role | Maker, checker, admin/support bila tersedia | P1 |
-| RT-TXN-01 | Transaction integrity | Memastikan properti finansial divalidasi server-side | Transaksi sintetis | P1 |
-| RT-WF-01 | Workflow integrity | Memastikan state transition dan approval benar | Workflow sandbox | P1 |
-| RT-IDEM-01 | Idempotency / duplicate | Mencegah efek ganda akibat retry | Sandbox connector | P1 |
-| RT-LIM-01 | Limit enforcement | Memastikan limit berlaku atomik | Limit test configuration | P1 |
-| RT-FX-01 | Fee/FX/quote | Menjaga konsistensi nilai dan expiry | Quote/fee fixture | P2 |
-| RT-CB-01 | Callback/webhook | Validasi authenticity dan replay | Callback simulator | P1 jika berlaku |
-| RT-INT-01 | Downstream integration | Menangani timeout, error, dan retry | Mock/sandbox partner | P1/P2 |
-| RT-REC-01 | Reconciliation | Menjaga konsistensi transaction, ledger, dan status | Synthetic transaction lifecycle | P1/P2 |
-| RT-IAM-01 | Token/session | Validasi identity dan privilege lifecycle | Test users/tokens | P1/P2 |
-| RT-DATA-01 | Data exposure | Membatasi properti data yang dikembalikan | API response, export, notification | P2 |
-| RT-LOG-01 | Auditability | Mencatat event keamanan dan transaksi | Audit logs/SIEM | P2 |
-| RT-API-01 | API inventory/configuration | Memeriksa route, version, dan policy | Approved API inventory | P2 |
-| RT-ABUSE-01 | Sensitive business flows | Menguji abuse guardrail pada fungsi sensitif | Test account dan rate limit sandbox | P2 |
+| RT-AUTH-01 | Object authorization | Membatasi akses per objek | Dua akun, dua beneficiary/transaksi | A01:2025 | P1 |
+| RT-AUTH-02 | Function authorization | Membatasi tindakan berdasarkan role | Maker, checker, admin/support bila tersedia | A01:2025, A07:2025 | P1 |
+| RT-TXN-01 | Transaction integrity | Memastikan properti finansial divalidasi server-side | Transaksi sintetis | A06:2025, A08:2025 | P1 |
+| RT-WF-01 | Workflow integrity | Memastikan state transition dan approval benar | Workflow sandbox | A01:2025, A06:2025, A08:2025 | P1 |
+| RT-IDEM-01 | Idempotency / duplicate | Mencegah efek ganda akibat retry | Sandbox connector | A06:2025, A08:2025, A10:2025 | P1 |
+| RT-LIM-01 | Limit enforcement | Memastikan limit berlaku atomik | Limit test configuration | A06:2025, A10:2025 | P1 |
+| RT-FX-01 | Fee/FX/quote | Menjaga konsistensi nilai dan expiry | Quote/fee fixture | A06:2025, A08:2025 | P2 |
+| RT-CB-01 | Callback/webhook | Validasi authenticity dan replay | Callback simulator | A07:2025, A08:2025, A10:2025 | P1 jika berlaku |
+| RT-INT-01 | Downstream integration | Menangani timeout, error, dan retry | Mock/sandbox partner | A08:2025, A10:2025 | P1/P2 |
+| RT-REC-01 | Reconciliation | Menjaga konsistensi transaction, ledger, dan status | Synthetic transaction lifecycle | A08:2025, A09:2025, A10:2025 | P1/P2 |
+| RT-IAM-01 | Token/session | Validasi identity dan privilege lifecycle | Test users/tokens | A02:2025, A04:2025, A07:2025 | P1/P2 |
+| RT-DATA-01 | Data exposure | Membatasi properti data yang dikembalikan | API response, export, notification | A01:2025, A04:2025 | P2 |
+| RT-LOG-01 | Auditability | Mencatat event keamanan dan transaksi | Audit logs/SIEM | A09:2025 | P2 |
+| RT-API-01 | API inventory/configuration | Memeriksa route, version, dan policy | Approved API inventory | A02:2025, A03:2025 | P2 |
+| RT-ABUSE-01 | Sensitive business flows | Menguji abuse guardrail pada fungsi sensitif | Test account dan rate limit sandbox | A06:2025, A10:2025 | P2 |
 
 Priority P1/P2 merupakan urutan awal untuk perencanaan, bukan severity hasil. Tentukan ulang berdasarkan business impact, exposure, desain aktual, dan kriteria evaluasi.
 
@@ -476,3 +476,10 @@ Mapping berikut merupakan titik awal pemetaan kontrol, bukan pengganti requireme
 - [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
 
 Catat identifier requirement standar yang digunakan pada test-case register dan tentukan acceptance criteria secara eksplisit.
+
+
+## OWASP Top 10:2025 alignment
+
+Kolom pada ringkasan menunjukkan kategori utama yang relevan untuk tiap test case. Pemetaan lengkap dan kategori tambahan tercantum pada [OWASP Top 10:2025 Mapping](17-owasp-top10-2025-mapping.md). Kategori tersebut adalah panduan klasifikasi, bukan kesimpulan bahwa kerentanan sudah ditemukan.
+
+OWASP Top 10:2025 tidak menetapkan nilai poin per bug. Untuk penentuan technical severity dan prioritas demo, gunakan evidence aktual dan [model scoring internal](18-scoring-temuan-bank-jatim.md). Model internal harus diganti bila rubric resmi Bank Jatim tersedia.
