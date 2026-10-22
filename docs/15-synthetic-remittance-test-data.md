@@ -143,6 +143,6 @@ Samakan zona waktu di seluruh log. Simpan raw request, token, dan evidence sensi
 - [Remittance Test Catalog](10-remittance-test-catalog.md)
 - [Attack-Path Matrix](11-remittance-attack-path-matrix.md)
 - [Sequence Diagrams](12-remittance-sequence-diagrams.md)
-- [OSCP / Bug-Hunter Field Playbook](13-oscp-bughunter-field-playbook.md)
+- [API Security Testing Field Playbook](13-api-security-testing-field-playbook.md)
 - [Test Case Template](../templates/test-case-template.md)
 - [Evidence Log Template](../templates/evidence-log-template.md)
