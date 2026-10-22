@@ -1,6 +1,6 @@
 # PoC Runbook
 
-## 0. Objective dan jadwal
+## Konteks objective dan jadwal
 
 Gunakan [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md) sebagai acuan objective, metodologi, deliverable, kriteria evaluasi, dan RoE.
 
