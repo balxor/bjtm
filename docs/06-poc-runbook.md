@@ -21,6 +21,10 @@
 - [ ] Evidence naming dan redaction telah dicoba.
 - [ ] Cleanup dan rollback procedure tersedia.
 
+## 1A. Klasifikasi finding dan prioritas demo
+
+Sebelum menetapkan urutan demonstrasi, petakan test ke [OWASP Top 10:2025](17-owasp-top10-2025-mapping.md), nilai dampak berdasarkan evidence, dan periksa kesiapan environment serta guardrail. Untuk latihan prioritas, rujuk [Scoring Temuan untuk Persiapan Evaluasi Bank Jatim](18-scoring-temuan-bank-jatim.md); skor tersebut adalah simulasi internal, bukan nilai resmi tender.
+
 ## 2. Urutan demonstrasi
 
 Untuk setiap skenario:
