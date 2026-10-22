@@ -4,7 +4,7 @@
 
 - **Finding ID:**
 - **Judul:**
-- **Severity:** Critical / High / Medium / Low / Informational (gunakan rubric engagement)
+- **Severity:** Critical / High / Medium / Low / Informational
 - **Confidence:** High / Medium / Low
 - **CWE / OWASP mapping:** jika relevan
 - **Affected component:**
@@ -18,7 +18,7 @@ Jelaskan kelemahan, dampak bisnis, dan batas analisis. Bedakan dampak yang diama
 
 ## Deskripsi teknis
 
-- **Observed behavior:** fakta yang diamati selama test.
+- **Observed behavior:** hasil pengujian yang diamati.
 - **Expected secure behavior:** perilaku yang diharapkan.
 - **Control gap:** kontrol yang gagal atau tidak bekerja sesuai persyaratan.
 - **Root cause:** penyebab yang didukung evidence; pisahkan dari dugaan.
@@ -34,7 +34,7 @@ Jelaskan kelemahan, dampak bisnis, dan batas analisis. Bedakan dampak yang diama
 - **Redaction reviewer:**
 - **Evidence integrity reference:** jika digunakan
 
-Simpan raw evidence pada evidence store yang memiliki kontrol akses. Jangan masukkan token, credential, data nasabah, atau data finansial ke dokumen yang didistribusikan secara luas.
+Simpan evidence sesuai klasifikasi dan kontrol akses engagement. Jangan memasukkan token, credential, data pribadi, atau informasi finansial ke dokumen yang didistribusikan secara luas.
 
 ## Dampak
 
