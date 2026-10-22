@@ -16,21 +16,37 @@ Run sheet ini digunakan oleh presenter, test operator, evidence lead, dan engage
 
 Satu personel dapat memegang beberapa peran jika kontrol keselamatan serta quality review tetap berjalan.
 
-## 3. Agenda demonstrasi 30 menit
+## 3. Kerangka presentasi 90 menit
+
+Dokumen jadwal Bank Jatim menyebut waktu presentasi 90 menit per peserta. Gunakan pembagian berikut sebagai rencana rehearsal dan sesuaikan dengan instruksi evaluator.
+
+| Menit | Agenda | Output |
+|---:|---|---|
+| 00–05 | Pembukaan, objective, scope, dan RoE | Batas pengujian dan tujuan |
+| 05–15 | Metodologi VAPT dan OWASP Top 10:2025 | Urutan kerja, cakupan, dan alasan teknik |
+| 15–25 | Tools dan proses validasi | Peran metode manual/otomatis dan validasi hasil |
+| 25–55 | Demonstrasi teknis temuan utama | Evidence, reproduksi, expected versus observed behavior |
+| 55–70 | Technical report, vulnerability matrix, dan risk rating | Bukti, dampak, risk rationale, dan batasan |
+| 70–80 | Remediation recommendation | Perbaikan dan kriteria retest |
+| 80–90 | Q&A teknis dan penutupan | Jawaban evaluator dan tindak lanjut |
+
+Jelaskan pengalaman proyek dan kompetensi personel dengan bukti yang dapat disampaikan. Jangan mengklaim temuan yang belum divalidasi.
+
+## 4. Agenda demonstrasi inti 30 menit
+
+Gunakan agenda ini sebagai segmen demonstrasi teknis dalam slot presentasi 90 menit bila sesuai dengan arahan evaluator.
 
 | Waktu | Bagian | Artefak yang ditampilkan | Exit criteria |
 |---|---|---|---|
-| 00:00-03:00 | Objective dan test boundaries | Scope excerpt, actor matrix, stop conditions | Semua pihak memahami batas test |
-| 03:00-08:00 | POC-01 Authorization | Baseline dan negative-test comparison, object state | Verdict didukung response dan state |
-| 08:00-14:00 | POC-02 Transaction integrity | Property matrix, expected vs actual server-side value | Validasi atribut bisa diperiksa |
-| 14:00-19:00 | POC-03 Approval binding | Transaction version, approval record, submit decision | Approval terikat ke state/versi yang sesuai |
-| 19:00-24:00 | POC-04 Idempotency | Retry record, dispatch count, sandbox result | Hasil satu logical transaction bisa direkonsiliasi |
-| 24:00-28:00 | POC-05 Callback/reconciliation | Callback fixture, state, ledger sandbox/reference, audit | Event dan state konsisten |
-| 28:00-30:00 | Ringkasan dan Q&A | Finding register, remediation, retest criteria | Evaluator menerima kesimpulan terukur |
+| 00:00–03:00 | Objective dan batas pengujian | Scope, actor matrix, stop conditions | Batas pengujian dipahami |
+| 03:00–08:00 | POC-01 Authorization | Baseline, negative test, object state | Verdict didukung response/state |
+| 08:00–14:00 | POC-02 Transaction integrity | Property matrix dan nilai aktual | Validasi server-side dapat ditinjau |
+| 14:00–19:00 | POC-03 Approval binding | Transaction version dan approval record | Approval sesuai state yang diuji |
+| 19:00–24:00 | POC-04 Idempotency | Retry record dan sandbox result | Efek satu logical transaction dapat direkonsiliasi |
+| 24:00–28:00 | POC-05 Callback/reconciliation | Callback fixture, state, dan audit | Event diproses sesuai policy |
+| 28:00–30:00 | Ringkasan | Temuan, remediasi, retest | Kesimpulan didukung evidence |
 
-Jika rubric resmi menentukan urutan lain, susun ulang agenda dan catat alasannya.
-
-## 4. Script pembuka
+## 5. Script pembuka
 
 Presenter harus menyampaikan:
 1. Business process dan kontrol yang akan diuji.
@@ -43,7 +59,7 @@ Presenter harus menyampaikan:
 
 Jangan menyatakan bahwa test dilakukan live jika yang ditampilkan merupakan fixture atau evidence dari rehearsal sebelumnya.
 
-## 5. Checklist sebelum demo
+## 6. Checklist sebelum demo
 
 ### Environment
 - [ ] Host, route, API version, dan environment cocok dengan scope.
@@ -70,7 +86,7 @@ Jangan menyatakan bahwa test dilakukan live jika yang ditampilkan merupakan fixt
 - [ ] Cleanup dan rekonsiliasi telah disiapkan.
 - [ ] Pemilik sistem dapat mengonfirmasi bahwa tidak ada payment rail produksi yang terlibat.
 
-## 6. Run sheet per skenario
+## 7. Run sheet per skenario
 
 ### POC-01: Authorization boundary
 
@@ -143,7 +159,7 @@ Jangan menyatakan bahwa test dilakukan live jika yang ditampilkan merupakan fixt
 
 **Verdict:** PASS jika event diproses sesuai policy dan mismatch ditangani; FAIL jika event tidak valid mengubah state atau menghasilkan efek yang tidak sesuai.
 
-## 7. Template live evidence timeline
+## 8. Template live evidence timeline
 
 | Timestamp | Test ID | Actor/role | Action | Expected | Observed | State reference | Evidence ID |
 |---|---|---|---|---|---|---|---|
@@ -156,7 +172,7 @@ Jangan menyatakan bahwa test dilakukan live jika yang ditampilkan merupakan fixt
 
 Isi kolom Observed dan State reference hanya setelah aktivitas dijalankan. Jangan mengisi expected result sebagai hasil aktual.
 
-## 8. Fallback jika live demo gagal
+## 9. Fallback jika live demo gagal
 
 Jika koneksi, akun, mock service, atau environment gagal:
 
@@ -169,7 +185,7 @@ Jika koneksi, akun, mock service, atau environment gagal:
 
 Rehearsal evidence dapat menunjukkan kesiapan metode, tetapi tidak boleh disajikan sebagai hasil pengujian live pada sistem target.
 
-## 9. Closeout checklist
+## 10. Closeout checklist
 
 - [ ] Seluruh test diberi status dan rationale.
 - [ ] Evidence ditinjau dan disunting.
@@ -180,7 +196,7 @@ Rehearsal evidence dapat menunjukkan kesiapan metode, tetapi tidak boleh disajik
 - [ ] Raw evidence tersimpan sesuai access control dan retensi.
 - [ ] Pemilik sistem menerima ringkasan hasil dan cleanup status.
 
-## 10. Dokumen pendukung
+## 11. Dokumen pendukung
 
 - [PoC Priority Scenarios](14-poc-priority-scenarios.md)
 - [Synthetic Remittance Test Data Model](15-synthetic-remittance-test-data.md)
