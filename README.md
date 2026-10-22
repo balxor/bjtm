@@ -40,6 +40,10 @@ Framework ini membantu tim menyiapkan, menjalankan, dan mengevaluasi penetration
 - **[OWASP Top 10:2025 Mapping](docs/17-owasp-top10-2025-mapping.md)**: pemetaan kategori OWASP 2025 ke test remittance.
 - **[Scoring Temuan Bank Jatim](docs/18-scoring-temuan-bank-jatim.md)**: simulasi internal 0–100 untuk triage dan prioritas demo. Bukan rubrik poin resmi Bank Jatim.
 
+### Acuan PoC Bank Jatim
+
+- **[Objective dan Kriteria Evaluasi PoC Bank Jatim](docs/19-objective-dan-kriteria-poc-bank-jatim.md)**: objective, urutan metodologi, deliverable, enam aspek evaluasi, RoE, dan konfirmasi jadwal.
+
 ### Template kerja
 
 - **[Test-case template](templates/test-case-template.md)**: perencanaan dan pelaksanaan test.
