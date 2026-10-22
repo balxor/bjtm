@@ -249,10 +249,13 @@ Raw evidence disimpan di evidence store engagement. Repository dokumentasi hanya
 
 ## 10. Referensi teknis
 
-- [OWASP API Security Top 10 2023](https://api-security.owasp.org/editions/2023/en/0x11-t10/)
+- [OWASP Top 10:2025](https://top10.owasp.org/2025/)
+- [OWASP API Security Top 10:2023](https://api-security.owasp.org/editions/2023/en/0x11-t10/) (referensi pelengkap khusus API)
 - [OWASP Web Security Testing Guide: Business Logic Testing](https://wstg.org/stable/4-Web_Application_Security_Testing/10-Business_Logic_Testing/)
 - [OWASP ASVS 5.0.0](https://asvs.owasp.org/)
 - [Remittance Threat Model](03-remittance-threat-model.md)
+- [OWASP Top 10:2025 Mapping](17-owasp-top10-2025-mapping.md)
+- [Scoring Temuan untuk Persiapan Evaluasi Bank Jatim](18-scoring-temuan-bank-jatim.md)
 - [Remittance Test Catalog](10-remittance-test-catalog.md)
 - [Attack-Path Matrix](11-remittance-attack-path-matrix.md)
 - [Sequence Diagrams](12-remittance-sequence-diagrams.md)
