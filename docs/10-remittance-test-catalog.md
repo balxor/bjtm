@@ -41,10 +41,10 @@ Jangan gunakan identifier rekening atau data pelanggan nyata dalam dataset PoC.
 | RT-CB-01 | Callback/webhook | Validasi authenticity dan replay | Callback simulator | A07:2025, A08:2025, A10:2025 | P1 jika berlaku |
 | RT-INT-01 | Downstream integration | Menangani timeout, error, dan retry | Mock/sandbox partner | A08:2025, A10:2025 | P1/P2 |
 | RT-REC-01 | Reconciliation | Menjaga konsistensi transaction, ledger, dan status | Synthetic transaction lifecycle | A08:2025, A09:2025, A10:2025 | P1/P2 |
-| RT-IAM-01 | Token/session | Validasi identity dan privilege lifecycle | Test users/tokens | A02:2025, A04:2025, A07:2025 | P1/P2 |
-| RT-DATA-01 | Data exposure | Membatasi properti data yang dikembalikan | API response, export, notification | A01:2025, A04:2025 | P2 |
+| RT-IAM-01 | Token/session | Validasi identity dan privilege lifecycle | Test users/tokens | A07:2025 | P1/P2 |
+| RT-DATA-01 | Data exposure | Membatasi properti data yang dikembalikan | API response, export, notification | A01:2025 | P2 |
 | RT-LOG-01 | Auditability | Mencatat event keamanan dan transaksi | Audit logs/SIEM | A09:2025 | P2 |
-| RT-API-01 | API inventory/configuration | Memeriksa route, version, dan policy | Approved API inventory | A02:2025, A03:2025 | P2 |
+| RT-API-01 | API inventory/configuration | Memeriksa route, version, dan policy | Approved API inventory | A02:2025 | P2 |
 | RT-ABUSE-01 | Sensitive business flows | Menguji abuse guardrail pada fungsi sensitif | Test account dan rate limit sandbox | A06:2025, A10:2025 | P2 |
 
 Priority P1/P2 merupakan urutan awal untuk perencanaan, bukan severity hasil. Tentukan ulang berdasarkan business impact, exposure, desain aktual, dan kriteria evaluasi.
