@@ -4,6 +4,10 @@
 
 Framework ini menetapkan proses persiapan, pelaksanaan, evaluasi, dan penutupan penetration testing Proof of Concept (PoC). Setiap tahap menghasilkan artefak yang dapat ditinjau dan digunakan untuk keputusan teknis.
 
+## Acuan objective PoC
+
+Ikuti [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md). Bank menilai kemampuan pelaksanaan VAPT, kualitas analisis dan rekomendasi, serta mutu laporan dan komunikasi teknis. Gunakan aplikasi, scope, durasi, dan aturan yang ditetapkan Bank. Metode mengacu pada OWASP Top 10:2025 dan wajib non-destruktif.
+
 ## Prinsip kerja
 
 1. **Otorisasi tertulis.** Pengujian aktif hanya dilakukan setelah pemilik kewenangan menyetujui scope dan Rules of Engagement (RoE).
