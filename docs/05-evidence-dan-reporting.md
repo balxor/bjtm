@@ -54,6 +54,20 @@ Tetapkan owner, kontrol akses, retensi, dan mekanisme penghapusan sebelum eviden
 9. Status retest dan pengecualian risiko.
 10. Appendix: test inventory, glossary, dan evidence index.
 
+## Deliverable PoC Bank Jatim
+
+Laporan akhir harus memuat lima deliverable yang disebut pada dokumen jadwal PoC Bank Jatim:
+
+| Deliverable | Isi minimum |
+|---|---|
+| Executive Summary | Scope, hasil utama, risiko prioritas, dan kesimpulan |
+| Technical Report | Metodologi, cakupan, langkah validasi, detail temuan, bukti, dampak, dan batasan pengujian |
+| Vulnerability Matrix | Aset/endpoint, kategori, status validasi, risk rating, dan referensi temuan |
+| Risk Rating | Tingkat risiko setiap temuan beserta dasar penilaian dan asumsi |
+| Remediation Recommendation | Rekomendasi spesifik, dapat ditindaklanjuti, dan prioritas perbaikan |
+
+Lima deliverable ini perlu mendukung enam aspek evaluasi: metodologi, pengalaman, kompetensi tim, tools, kualitas laporan, dan presentasi hasil. Rincian indikator tersedia pada [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md). Dokumen tersebut tidak memberi bobot angka untuk keenam aspek.
+
 ## Executive dashboard
 
 | Dimensi | Indikator |
