@@ -13,10 +13,10 @@ Untuk risiko yang khusus pada API, gunakan [OWASP API Security Top 10:2023](http
 | Kode | Kategori resmi | Fokus untuk remittance | Test case yang terkait |
 |---|---|---|---|
 | A01:2025 | Broken Access Control | Akses lintas customer/tenant, fungsi role, object/property authorization, approval dan pembatasan operasi | RT-AUTH-01, RT-AUTH-02, RT-DATA-01 |
-| A02:2025 | Security Misconfiguration | Konfigurasi gateway/service, route terbuka, debug/error detail, CORS, default configuration, serta policy yang tidak konsisten | RT-API-01, RT-CFG-01, RT-INT-01 |
-| A03:2025 | Software Supply Chain Failures | Dependency dan package, sumber artefak, build/release pipeline, hak akses CI/CD, signing/provenance | Perlu test tambahan bila source code, pipeline, atau dependency masuk scope |
+| A02:2025 | Security Misconfiguration | Konfigurasi gateway/service, route terbuka, debug/error detail, CORS, default configuration, serta policy yang tidak konsisten | RT-API-01, RT-CFG-01 |
+| A03:2025 | Software Supply Chain Failures | Dependency dan package, sumber artefak, build/release pipeline, hak akses CI/CD, signing/provenance | RT-SC-01 bila source code, pipeline, atau dependency masuk scope |
 | A04:2025 | Cryptographic Failures | Perlindungan data sensitif saat transit/tersimpan, pengelolaan key/secret, token dan material kriptografi | RT-CRYPTO-01 |
-| A05:2025 | Injection | Input yang mencapai query, interpreter, template, command, atau parser tanpa penanganan yang aman | Perlu test input/injection khusus pada komponen yang diizinkan |
+| A05:2025 | Injection | Input yang mencapai query, interpreter, template, command, atau parser tanpa penanganan yang aman | RT-INJ-01 pada komponen yang diizinkan |
 | A06:2025 | Insecure Design | Kelemahan business logic, aturan limit, separation of duties, approval binding, dan penyalahgunaan flow sensitif | RT-TXN-01, RT-WF-01, RT-IDEM-01, RT-LIM-01, RT-FX-01, RT-ABUSE-01 |
 | A07:2025 | Authentication Failures | Login/session lifecycle, token validation, identity antarservice, autentikasi callback, dan pemulihan akun sesuai scope | RT-IAM-01, RT-AUTH-02, RT-CB-01 |
 | A08:2025 | Software or Data Integrity Failures | Perubahan state tidak sah, data atau event yang tidak tepercaya, duplicate processing, integritas callback, dan konsistensi transaksi | RT-TXN-01, RT-WF-01, RT-IDEM-01, RT-CB-01, RT-INT-01, RT-REC-01 |
@@ -51,15 +51,15 @@ Pemetaan di atas merupakan hubungan kerja yang relevan untuk pengujian remittanc
 
 Kategori dapat lebih dari satu bila temuan menunjukkan beberapa akar masalah. Pilih kategori utama berdasarkan root cause yang didukung evidence, lalu tambahkan kategori sekunder jika perlu. Jangan mengklasifikasikan temuan hanya dari nama test case.
 
-## 4. Kebutuhan test tambahan untuk cakupan lengkap
+## 4. Scope dan status cakupan
 
-Katalog remittance berfokus pada authorization, transaction integrity, workflow, dan integrasi. Bila area tersebut masuk scope, tambahkan test khusus untuk:
+Katalog mencakup test case khusus untuk security configuration (RT-CFG-01), supply chain (RT-SC-01), cryptographic controls (RT-CRYPTO-01), serta injection handling (RT-INJ-01). Pelaksanaan tiap test tetap bergantung pada akses, environment, serta scope tertulis:
 
-1. **Software supply chain (A03):** dependency inventory/SBOM bila tersedia, provenance package, hak akses build pipeline, integritas release artifact, dependency yang tidak disetujui, dan perlindungan secret pipeline.
-2. **Cryptography (A04):** TLS/configuration, penyimpanan dan rotasi key, penggunaan secret, perlindungan token, serta exposure data pada log/backup.
-3. **Injection (A05):** validasi input pada query/parser/interpreter. Gunakan payload minimal pada environment dan endpoint yang diotorisasi; jangan mengekstrak data nyata atau menjalankan tindakan destruktif.
-4. **Misconfiguration (A02):** route dan service exposure, debug mode, konfigurasi CORS, policy gateway, default setting, dan permission yang terlalu luas.
-5. **Logging dan alerting (A09):** event kritis yang wajib dicatat, korelasi lintas-service, akses ke log, retensi, deteksi, serta alert yang secara eksplisit tersedia dalam scope.
+1. **A03 Software Supply Chain Failures:** RT-SC-01 hanya dijalankan bila repository, SBOM, pipeline, release artifact, atau dependency memang termasuk scope. Untuk black-box-only PoC, area ini bisa berstatus OUT OF SCOPE.
+2. **A04 Cryptographic Failures:** RT-CRYPTO-01 memerlukan requirement atau konfigurasi yang bisa diperiksa. Jangan mencoba memecahkan key atau mengakses data nasabah.
+3. **A05 Injection:** RT-INJ-01 menggunakan payload minimal dan non-destruktif pada endpoint yang diizinkan.
+4. **A02 Security Misconfiguration:** RT-CFG-01 memeriksa konfigurasi dan route yang berada dalam scope.
+5. **A09 Security Logging & Alerting Failures:** RT-LOG-01 mencakup audit/correlation; alerting diuji hanya jika log/SIEM/alert mechanism termasuk scope.
 
 Jangan menyatakan kategori sudah tercakup hanya karena tercantum pada tabel. Beri status **TESTED**, **NOT TESTED**, **BLOCKED**, atau **OUT OF SCOPE**, dengan alasan dan evidence reference.
 
