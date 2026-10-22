@@ -308,7 +308,13 @@ Jangan menyatakan kerugian finansial aktual jika test hanya menunjukkan perubaha
 | API inventory | Versioned inventory, route owner, removal/deprecation process |
 | Sensitive data | Data minimization, output schema, RBAC, log redaction, retention |
 
-## 9. Referensi teknis
+## 9. OWASP mapping dan skor finding
+
+Attack-path score pada dokumen ini adalah `Likelihood × Impact` untuk prioritas risiko jalur uji. Jangan menyamakannya dengan technical severity, nilai finding 0–100 pada simulasi internal, atau poin evaluasi tender.
+
+Klasifikasikan finding menggunakan [OWASP Top 10:2025 Mapping](17-owasp-top10-2025-mapping.md). Untuk memilih dan merangking temuan pada latihan PoC, baca [Scoring Temuan untuk Persiapan Evaluasi Bank Jatim](18-scoring-temuan-bank-jatim.md). Nilai di dokumen scoring adalah model internal dan harus diganti jika rubric resmi diterima.
+
+## 10. Referensi teknis
 
 - [OWASP API Security Top 10 2023](https://api-security.owasp.org/editions/2023/en/0x11-t10/)
 - [OWASP Web Security Testing Guide: Business Logic Testing](https://wstg.owasp.org/stable/4-Web_Application_Security_Testing/10-Business_Logic_Testing/)
