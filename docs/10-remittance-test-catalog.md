@@ -26,6 +26,10 @@ Jangan gunakan identifier rekening atau data pelanggan nyata dalam dataset PoC.
 ## 3. Test catalog ringkas
 
 | Test ID | Domain | Tujuan | Data/komponen | OWASP Top 10:2025 | Prioritas awal |
+| RT-CFG-01 | Security configuration | Memeriksa konfigurasi, route, debug, dan policy yang terekspos | Gateway/service dalam scope | A02:2025 | P1/P2 |
+| RT-SC-01 | Software supply chain | Memeriksa dependency/build/release integrity yang disetujui | Repo, SBOM, pipeline atau artefak jika in scope | A03:2025 | Conditional |
+| RT-CRYPTO-01 | Cryptographic controls | Memeriksa perlindungan data dan lifecycle key/secret yang termasuk scope | TLS/config/secret test fixture | A04:2025 | P1/P2 |
+| RT-INJ-01 | Injection | Menguji penanganan input pada parser/query/interpreter di endpoint terpilih | Synthetic input dan endpoint yang disetujui | A05:2025 | P1/P2 |
 |---|---|---|---|---|
 | RT-AUTH-01 | Object authorization | Membatasi akses per objek | Dua akun, dua beneficiary/transaksi | A01:2025 | P1 |
 | RT-AUTH-02 | Function authorization | Membatasi tindakan berdasarkan role | Maker, checker, admin/support bila tersedia | A01:2025, A07:2025 | P1 |
@@ -418,6 +422,88 @@ Priority P1/P2 merupakan urutan awal untuk perencanaan, bukan severity hasil. Te
 - Deteksi dan audit event tersedia jika flow dipakai berlebihan.
 
 Jangan menjalankan load test atau meningkatkan request rate di luar nilai tertulis pada RoE.
+
+### RT-CFG-01: Security misconfiguration
+
+**Tujuan:** memeriksa konfigurasi aplikasi, gateway, atau service yang dapat membuka akses atau mengurangi kontrol keamanan.
+
+**Preconditions**
+- Daftar host, route, environment, dan komponen dalam scope.
+- Baseline konfigurasi/hardening yang disetujui atau acceptance criteria yang jelas.
+- Akses yang diperlukan untuk memeriksa respons atau konfigurasi test yang disediakan.
+
+**Prosedur**
+1. Bandingkan route dan service yang terlihat dengan inventory serta scope.
+2. Periksa secara terbatas apakah debug/test endpoint, directory listing, default page, error trace, atau management route terekspos.
+3. Tinjau kebijakan authentication, CORS, security headers, transport security, dan konfigurasi gateway/service yang disediakan.
+4. Bandingkan deny policy antar-gateway dan service jika akses tersedia.
+5. Jangan mengubah konfigurasi atau mengakses route administrasi tanpa otorisasi khusus.
+
+**Expected behavior:** route tidak digunakan tidak terekspos, debug detail tidak membocorkan data internal, service sensitif membutuhkan kontrol akses, dan policy berlaku konsisten.
+
+**Evidence:** URL/path dalam scope, konfigurasi baseline, request/response tersanitasi, waktu, environment, serta hasil perbandingan.
+
+**FAIL criteria:** konfigurasi aktual melanggar requirement atau mengekspos fungsi/informasi yang tidak boleh diakses.
+
+### RT-SC-01: Software supply-chain controls (conditional)
+
+**Tujuan:** menilai kontrol dependency, build, dan release hanya jika source repository, CI/CD, SBOM, infrastructure-as-code, atau artifact supply chain secara eksplisit masuk scope.
+
+**Preconditions**
+- Izin tertulis untuk repository/pipeline/artifact yang ditinjau.
+- Read-only access bila memadai, SBOM atau dependency lockfile, serta kebijakan release yang berlaku.
+- Reviewer dari pemilik aplikasi atau DevSecOps.
+
+**Prosedur**
+1. Cocokkan dependency inventory/SBOM dengan lockfile serta release artifact yang dipakai untuk test environment.
+2. Tinjau pinning versi, sumber package, dukungan dependency, dan pemeriksaan dependency yang berjalan sesuai kebijakan.
+3. Tinjau kontrol perubahan pipeline, permission service account, approval release, secret exposure, dan integritas artefak yang dapat diperiksa dari bukti yang disediakan.
+4. Dokumentasikan kelemahan kontrol atau gap bukti tanpa mengubah source, memasukkan package, atau memicu build/deploy yang tidak diotorisasi.
+5. Jika repository/pipeline tidak masuk scope, tetapkan OUT OF SCOPE atau NOT TESTED; jangan menyimpulkan kontrol supply-chain aman.
+
+**Expected behavior:** dependency dan artifact dapat ditelusuri, pipeline memakai prinsip least privilege, release dikendalikan, dan secret tidak terekspos dalam artefak atau log.
+
+**Evidence:** commit/release reference, manifest atau SBOM yang diizinkan, setting relevan, hasil policy check, dan scope reference.
+
+### RT-CRYPTO-01: Cryptographic controls
+
+**Tujuan:** memeriksa kontrol kriptografi yang terkait data remittance, sesi, integrasi, dan secret sesuai scope.
+
+**Preconditions**
+- Aset dan jalur data yang diizinkan telah dipetakan.
+- Test account dan test data sintetis.
+- Baseline atau requirement kriptografi, konfigurasi TLS, serta key/secret handling yang tersedia bagi tim.
+
+**Prosedur**
+1. Periksa transport security pada endpoint yang disetujui menggunakan pemeriksaan non-destruktif.
+2. Tinjau konfigurasi kriptografi dan alur perlindungan data at rest hanya bila tersedia akses resmi.
+3. Periksa apakah secret, token, key material, atau data sensitif masuk ke response/error/log yang dapat diakses tidak berwenang.
+4. Tinjau kontrol akses dan proses rotasi/revocation key atau secret dari artefak yang diizinkan.
+5. Jangan mencoba memecahkan key, men-decrypt data nasabah, atau mengekspor secret aktual untuk membuktikan dampak.
+
+**Expected behavior:** konfigurasi mengikuti baseline, material kriptografi terlindungi, dan akses data/secret dibatasi sesuai policy.
+
+**Evidence:** konfigurasi tersanitasi, hasil test TLS yang relevan, data sintetis, dan referensi requirement.
+
+### RT-INJ-01: Injection handling
+
+**Tujuan:** memeriksa apakah input pada endpoint yang diizinkan ditangani secara aman ketika diproses oleh query, parser, template, atau interpreter.
+
+**Preconditions**
+- Endpoint dan jenis uji tercantum dalam scope.
+- Test environment dan data sintetis.
+- Payload minimal yang tidak memodifikasi data atau menjalankan tindakan destruktif.
+
+**Prosedur**
+1. Tetapkan satu endpoint dan satu input dari alur normal sebagai baseline.
+2. Kirim variasi input minimal dan non-destruktif yang sesuai konteks parser/query yang digunakan.
+3. Amati perbedaan response, error, timing, dan bukti server-side yang telah disediakan.
+4. Bila indikasi ditemukan, gunakan proof minimal untuk konfirmasi tanpa membaca data nyata atau menjalankan command di luar kebutuhan.
+5. Hentikan setelah ada bukti yang memadai; jangan melakukan ekstraksi, persistence, atau modifikasi data bisnis.
+
+**Expected behavior:** input divalidasi/di-parameterisasi sesuai konteks, error tidak membocorkan detail sensitif, dan payload tidak memicu operasi yang tidak diotorisasi.
+
+**Evidence:** baseline dan variasi request tersanitasi, actual versus expected behavior, error/correlation ID yang tersedia, serta bukti minimal yang mendukung root cause.
 
 ## 5. Evidence register
 
