@@ -2,9 +2,9 @@
 
 ## 1. Status rubrik dan tujuan
 
-Dokumen yang tersedia untuk persiapan ini belum memuat tabel poin resmi Bank Jatim yang menyatakan berapa nilai untuk tiap jenis bug atau bagaimana evaluator memberi nilai pada temuan. Karena itu, angka dalam dokumen ini adalah **model simulasi internal untuk memilih dan melatih skenario PoC**, bukan klaim tentang skor resmi Bank Jatim atau jaminan skor tender.
+Dokumen jadwal PoC Bank Jatim menyebut enam aspek evaluasi: metodologi, pengalaman, kompetensi tim, tools, kualitas laporan, dan presentasi hasil. Dokumen tersebut tidak memuat bobot angka atau tabel poin resmi untuk tiap jenis bug. Karena itu, angka dalam dokumen ini adalah **model simulasi internal untuk triage dan memilih skenario demonstrasi**, bukan skor resmi Bank Jatim atau prediksi nilai tender.
 
-Sebelum PoC, minta atau cocokkan dengan TOR/SoW, acceptance criteria, dan lembar penilaian evaluator. Jika dokumen resmi memuat formula atau bobot, formula resmi menggantikan simulasi ini.
+Sebelum PoC, minta atau cocokkan dengan TOR/SoW, acceptance criteria, dan lembar penilaian evaluator. Jika dokumen resmi memuat formula atau bobot, formula resmi menggantikan simulasi ini. Gunakan enam aspek dan deliverable dalam [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md) sebagai dasar persiapan, tanpa menambahkan bobot yang tidak diberikan Bank.
 
 **Tidak ada nilai baku OWASP “A01 sekian poin” atau “A08 sekian poin”.** OWASP Top 10:2025 dipakai untuk klasifikasi risiko. Skor suatu finding bergantung pada dampak, kemungkinan eksploitasi, cakupan, kualitas bukti, dan kontrol yang gagal.
 
@@ -17,7 +17,7 @@ Sebelum PoC, minta atau cocokkan dengan TOR/SoW, acceptance criteria, dan lembar
 | Internal finding-priority score | Nilai praktis sebuah temuan untuk triage dan pemilihan demo | Gunakan rumus simulasi pada dokumen ini |
 | Nilai evaluasi tender | Nilai yang diberikan evaluator kepada metode, bukti, dan demonstrasi tim | Hanya dapat dipastikan dari rubric resmi Bank Jatim |
 
-Temuan yang berisiko bisnis tinggi tidak otomatis memberi nilai tender tinggi jika bukti lemah, test di luar scope, metode tidak repeatable, atau dampaknya dibesar-besarkan. Sebaliknya, temuan yang terbukti secara aman dengan root cause dan perbaikan yang jelas dapat menunjukkan kualitas kerja yang kuat.
+Bank menyatakan penilaian tidak berfokus pada jumlah temuan saja. Temuan berisiko tinggi harus didukung evidence valid, metodologi yang sesuai, reproduktibilitas, risk rating beralasan, dan rekomendasi yang dapat ditindaklanjuti. Model 0–100 di dokumen ini hanya membantu tim menentukan urutan triage dan demo; model ini tidak memprediksi poin evaluasi tender.
 
 ## 3. Rumus simulasi internal: 0–100
 
@@ -119,3 +119,4 @@ Setelah rubric resmi tersedia, petakan setiap test scenario dan evidence ke bari
 - [Remittance Test Catalog](10-remittance-test-catalog.md)
 - [Remittance Attack-Path Matrix](11-remittance-attack-path-matrix.md)
 - [Tender Differentiation dan Internal Scorecard](07-differentiation-scorecard.md)
+- [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md)
