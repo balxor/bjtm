@@ -4,6 +4,8 @@
 
 Catalog ini mengubah threat model remittance menjadi kandidat test case dengan precondition, prosedur terkontrol, expected behavior, evidence, dan kriteria hasil. Masukkan hanya skenario yang sesuai scope, arsitektur, dan RoE engagement.
 
+Dokumen jadwal PoC Bank Jatim menetapkan satu aplikasi uji, tetapi belum mengidentifikasi aplikasi tersebut. Gunakan katalog ini sebagai kandidat pengujian **jika aplikasi yang ditetapkan terkait remittance**. Pilih test case hanya setelah teknologi, scope, akun, dan RoE dikonfirmasi. Objective dan enam aspek evaluasi ada di [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md).
+
 ## 2. Label dan test-data model
 
 ### Status hasil
