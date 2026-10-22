@@ -61,3 +61,12 @@
 - **NOT TESTED:** test tidak dijalankan dan alasan dicatat.
 
 Hasil PASS hanya berlaku untuk kondisi, test case, environment, dan waktu yang didokumentasikan.
+
+
+## OWASP Top 10:2025 dan prioritas temuan
+
+Klasifikasikan setiap test case dan finding menggunakan [OWASP Top 10:2025](17-owasp-top10-2025-mapping.md). Jika test berfokus pada API, gunakan OWASP API Security Top 10:2023 sebagai referensi pelengkap. Kode OWASP mengelompokkan risiko, bukan menetapkan poin otomatis untuk bug.
+
+Setelah finding dibuktikan, catat terpisah: kategori OWASP, technical severity, dampak bisnis yang dibuktikan, dan prioritas internal PoC. Untuk latihan pemilihan skenario, gunakan [Scoring Temuan untuk Persiapan Evaluasi Bank Jatim](18-scoring-temuan-bank-jatim.md). Angka simulasi internal tidak boleh disebut sebagai poin resmi tender.
+
+Setiap test case perlu memiliki expected behavior yang merujuk pada policy, API contract, requirement, atau role matrix. Bila sumber requirement tidak tersedia, tandai sebagai dependency dan jangan menyimpulkan FAIL berdasarkan dugaan.
