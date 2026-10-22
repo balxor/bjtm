@@ -2,7 +2,7 @@
 
 ## 1. Tujuan dan metode
 
-Dokumen ini memberikan metode manual-first untuk mengubah endpoint inventory menjadi pengujian API dan business logic yang bisa direproduksi. Urutan kerja terinspirasi dari penetration testing hands-on: reconnaissance dalam scope, enumeration, hypothesis-driven testing, controlled validation, evidence capture, dan reporting.
+Dokumen ini menjabarkan pengujian API dan business logic secara manual-first. Tim memetakan endpoint dalam scope, menyusun hipotesis, memvalidasi kontrol, merekam evidence, dan mendokumentasikan hasil yang dapat diulang.
 
 Pada sistem remittance, pembuktian dibatasi pada akses dan perubahan terhadap objek sintetis. Tidak dilakukan post-exploitation di luar kebutuhan pembuktian, tidak dilakukan pivot ke sistem lain, dan tidak dilakukan akses data nasabah nyata.
 
