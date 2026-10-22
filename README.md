@@ -24,6 +24,7 @@ Framework ini digunakan untuk merencanakan dan melaksanakan Proof of Concept (Po
 | [Tender differentiation dan scorecard](docs/07-differentiation-scorecard.md) | Kualitas teknis, demonstrasi, dan penilaian kesiapan internal |
 | [Kesiapan klien dan tim](docs/08-kesiapan-klien-dan-tim.md) | Input proyek, peran tim, dan persiapan teknis |
 | [Operating model](docs/09-operating-model.md) | Workstream, deliverable, dan quality gate |
+| [Remittance test catalog](docs/10-remittance-test-catalog.md) | Test case teknis, preconditions, expected result, evidence, serta kriteria pass/fail |
 | [Test-case template](templates/test-case-template.md) | Format desain dan pelaksanaan test |
 | [Finding template](templates/finding-template.md) | Format temuan dan rekomendasi |
 | [Evidence-log template](templates/evidence-log-template.md) | Indeks evidence dan kontrol penyimpanan |
