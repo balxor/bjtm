@@ -2,89 +2,91 @@
 
 ## 0. Authorization gate
 
-- [ ] Otorisasi tertulis diterima dan valid.
-- [ ] Scope dan exclusions disetujui.
-- [ ] RoE, batas waktu, request, dan transaksi disepakati.
-- [ ] Environment dipastikan dan dicatat.
-- [ ] Prohibited actions dan stop conditions disepakati.
-- [ ] Emergency contacts dan jalur eskalasi telah diuji.
-- [ ] Akses evidence repository serta aturan retensi dikonfirmasi.
+- [ ] Otorisasi tertulis tersedia.
+- [ ] Scope dan exclusions ditetapkan.
+- [ ] RoE, batas waktu, request, dan transaksi disetujui.
+- [ ] Environment dicatat.
+- [ ] Teknik terlarang dan stop conditions diketahui tim.
+- [ ] Emergency contact dan jalur eskalasi tersedia.
+- [ ] Evidence store dan aturan retensi ditetapkan.
 
 ## 1. Environment readiness
 
-- [ ] Architecture/data-flow tersedia atau gap dicatat.
-- [ ] Daftar URL/IP/API berasal dari pemilik sistem dan berada dalam scope.
-- [ ] Akun uji serta role diverifikasi.
+- [ ] Diagram arsitektur dan data-flow tersedia.
+- [ ] Daftar URL/IP/API sesuai scope.
+- [ ] Akun uji dan role telah diuji.
 - [ ] Dataset dan beneficiary sintetis tersedia.
-- [ ] Jalur settlement dinonaktifkan atau telah dibatasi sesuai desain sandbox.
-- [ ] Sinkronisasi waktu diperiksa.
-- [ ] Evidence naming dan redaction diuji.
-- [ ] Prosedur cleanup/rollback diketahui tim dan pemilik sistem.
+- [ ] Jalur settlement dinonaktifkan atau dibatasi sesuai desain sandbox.
+- [ ] Sinkronisasi waktu diuji.
+- [ ] Evidence naming dan redaction telah dicoba.
+- [ ] Cleanup dan rollback procedure tersedia.
 
-## 2. Demo sequence
+## 2. Urutan demonstrasi
 
 Untuk setiap skenario:
 
-1. Jelaskan proses bisnis dan aset yang sedang diuji.
+1. Jelaskan proses bisnis dan aset yang diuji.
 2. Nyatakan hipotesis serta kontrol yang diharapkan.
-3. Tegaskan preconditions, akun uji, dan batas dampak.
-4. Lakukan validasi minimum yang telah disetujui.
-5. Tampilkan evidence tersanitasi dan hasil sebelum/sesudah.
-6. Hubungkan observasi ke dampak bisnis yang masuk akal.
-7. Bedakan root cause terverifikasi dari hipotesis.
-8. Tunjukkan remediasi yang dapat dilaksanakan.
-9. Jelaskan kriteria retest dan cara mengukur penutupan.
-10. Konfirmasi tidak ada efek samping dan lengkapi catatan cleanup.
+3. Tampilkan preconditions, akun uji, dan batas dampak.
+4. Jalankan langkah yang tercantum pada test case.
+5. Tampilkan evidence dan state sebelum/sesudah.
+6. Hubungkan observasi dengan dampak bisnis yang dapat dijelaskan.
+7. Pisahkan penyebab yang didukung bukti dari hipotesis.
+8. Uraikan perbaikan yang direkomendasikan.
+9. Jelaskan acceptance criteria untuk retest.
+10. Periksa efek samping dan selesaikan cleanup.
 
-## 3. Rencana waktu (isi setelah durasi PoC dikonfirmasi)
+## 3. Rencana waktu
+
+Lengkapi durasi, owner, dan exit criteria sesuai alokasi PoC.
 
 | Tahap | Durasi | Owner | Exit criteria |
 |---|---|---|---|
-| Kickoff dan safety briefing | TBD | Engagement lead + scope owner | Go/no-go disetujui |
-| Validasi environment | TBD | Pentester + system owner | Akun, data, dan target tervalidasi |
+| Kickoff dan safety briefing | TBD | Engagement lead + scope owner | Keputusan go/no-go dicatat |
+| Validasi environment | TBD | Pentester + system owner | Akun, data, dan target siap |
 | Demonstrasi skenario 1 | TBD | Test lead | Evidence dan hasil dicatat |
 | Demonstrasi skenario 2 | TBD | Test lead | Evidence dan hasil dicatat |
-| Skenario tambahan (bila disetujui) | TBD | Test lead | Sesuai slot dan batas RoE |
+| Skenario tambahan | TBD | Test lead | Selesai sesuai jadwal dan RoE |
 | Ringkasan hasil | TBD | Reporting lead | Temuan awal ditinjau |
 | Cleanup dan closeout | TBD | Tim + system owner | Rekonsiliasi dan sign-off |
 
 ## 4. Evidence naming convention
 
-Format yang direkomendasikan:
+Format:
 
     <ENGAGEMENT-ID>_<TEST-ID>_<TIMESTAMP>_<EVIDENCE-TYPE>
 
-Contoh sintetis:
-- BJ-POC-01_RT-AUTH-01_20261022T103000_request-redacted.txt
-- BJ-POC-01_RT-AUTH-01_20261022T103000_response-redacted.txt
-- BJ-POC-01_RT-AUTH-01_20261022T103000_state-before-after.png
+Contoh:
+- ENG-POC-01_RT-AUTH-01_20261022T103000_request-redacted.txt
+- ENG-POC-01_RT-AUTH-01_20261022T103000_response-redacted.txt
+- ENG-POC-01_RT-AUTH-01_20261022T103000_state-before-after.png
 
-Gunakan timestamp dan zona waktu yang konsisten. Jangan menyertakan nama nasabah, nomor rekening, token, atau data finansial pada nama file.
+Gunakan timestamp dan zona waktu yang konsisten. Hindari nama nasabah, nomor rekening, token, dan data finansial pada nama file.
 
-## 5. Stop conditions
+## 5. Stop procedure
 
 Hentikan aktivitas terkait jika:
-- Transaksi nyata berpotensi diproses atau dana bergerak.
-- Data/objek di luar test population terlihat atau berubah.
-- Sistem menjadi tidak stabil atau kontrol operasional terganggu.
-- Batas waktu, request, atau transaksi tercapai.
+- Transaksi nyata berpotensi diproses atau dana berpindah.
+- Data atau objek di luar test population terlihat atau berubah.
+- Sistem tidak stabil atau operasi terdampak.
+- Batas waktu, request, volume, atau transaksi tercapai.
 - Secret atau data sensitif terpapar.
-- Pemilik sistem menginstruksikan berhenti.
+- Pemilik sistem memerintahkan penghentian.
 
 Setelah stop:
-- Jangan mencoba variasi lanjutan.
+- Hentikan variasi test terkait.
 - Catat waktu, test ID, dan kondisi.
-- Beri tahu emergency contact.
-- Amankan bukti yang dibutuhkan dengan cara yang disetujui.
-- Lanjutkan hanya setelah izin eksplisit dan mitigasi disetujui.
+- Hubungi emergency contact.
+- Amankan evidence sesuai prosedur.
+- Lanjutkan hanya setelah mitigasi dan izin untuk melanjutkan disetujui.
 
 ## 6. Closeout
 
-- [ ] Semua test case ditandai status dan hasilnya.
+- [ ] Semua test case memiliki status dan hasil.
 - [ ] Transaksi/objek uji direkonsiliasi dengan pemilik sistem.
 - [ ] Cleanup/rollback selesai.
-- [ ] Evidence tervalidasi dan tersanitasi.
-- [ ] Temuan awal melalui quality review.
-- [ ] Gap dan test yang tidak dilakukan dicatat.
-- [ ] Debrief dengan client selesai.
-- [ ] Retensi/penghapusan artefak mengikuti persetujuan.
+- [ ] Evidence ditinjau dan disunting.
+- [ ] Finding melalui quality review.
+- [ ] Gap dan test yang tidak dijalankan dicatat.
+- [ ] Debrief selesai.
+- [ ] Retensi dan penghapusan artefak mengikuti kebijakan engagement.
