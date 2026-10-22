@@ -4,7 +4,7 @@
 
 Menetapkan batas legal, operasional, dan teknis sebelum pengujian dimulai. Otorisasi harus tertulis dan diberikan oleh pihak yang berwenang atas aset yang diuji.
 
-Dokumen jadwal PoC Bank Jatim menetapkan satu aplikasi uji yang sama untuk seluruh peserta, dengan scope dan aturan yang seragam. Nama aplikasi dan rincian teknis belum tercantum dalam jadwal yang tersedia. Catat detail dari Bank saat kick-off sebelum menyusun endpoint inventory atau menetapkan arsitektur.
+Dokumen jadwal PoC Bank Jatim menetapkan satu aplikasi uji yang sama untuk seluruh peserta, dengan scope dan aturan yang seragam. Nama aplikasi dan rincian teknis belum tercantum dalam jadwal yang tersedia. Objective, deliverable, dan enam aspek evaluasi dirangkum pada [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md). Catat detail dari Bank saat kick-off sebelum menyusun endpoint inventory atau menetapkan arsitektur.
 
 ## Scope matrix
 
