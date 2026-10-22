@@ -1,6 +1,6 @@
 # Evidence Log Template
 
-> Gunakan log ini sebagai indeks. Artefak mentah harus disimpan pada evidence repository yang disetujui dan dibatasi aksesnya, bukan di repository GitHub publik.
+Gunakan log ini sebagai indeks evidence. Simpan artefak mentah pada evidence store dengan kontrol akses, klasifikasi, dan retensi sesuai kebijakan engagement.
 
 | Field | Nilai |
 |---|---|
@@ -10,10 +10,10 @@
 | Evidence ID | TBD |
 | Timestamp dan timezone | TBD |
 | Actor / role uji | TBD |
-| Target yang disetujui | TBD |
+| Target | TBD |
 | Synthetic object / transaction ID | TBD |
 | Evidence type | Request / response / screenshot / log / state snapshot / lainnya |
-| File reference di secure vault | TBD |
+| File reference | TBD |
 | Sanitization status | Pending / Complete |
 | Reviewer | TBD |
 | Integrity/hash reference (opsional) | TBD |
@@ -23,20 +23,20 @@
 
 ## Review checklist
 
-- [ ] Evidence berkaitan dengan test case dan finding yang benar.
+- [ ] Evidence terkait dengan test case dan finding yang tepat.
 - [ ] Timestamp dan zona waktu konsisten.
-- [ ] Identifier menggunakan data sintetis jika memungkinkan.
-- [ ] Secret, credential, PII, dan financial data telah di-redact.
-- [ ] Evidence menunjukkan observed behavior dan bukan kesimpulan tanpa konteks.
-- [ ] Raw evidence disimpan sesuai kontrol akses dan retensi.
-- [ ] Salinan untuk laporan tidak mengungkap data yang tidak perlu.
-- [ ] Hash/integrity reference dicatat bila proses membutuhkan.
-- [ ] Access serta disposal mengikuti kebijakan engagement.
+- [ ] Identifier memakai data sintetis jika memungkinkan.
+- [ ] Secret, credential, data pribadi, dan informasi finansial telah disunting.
+- [ ] Evidence menunjukkan hasil aktual dan expected behavior.
+- [ ] Artefak mentah disimpan sesuai kontrol akses dan retensi.
+- [ ] Salinan laporan hanya memuat data yang diperlukan.
+- [ ] Hash/integrity reference dicatat bila dibutuhkan.
+- [ ] Akses serta penghapusan mengikuti kebijakan engagement.
 
 ## Contoh ID artefak
 
-- BJ-POC-01_RT-AUTH-01_20261022T103000_request-redacted.txt
-- BJ-POC-01_RT-AUTH-01_20261022T103000_response-redacted.txt
-- BJ-POC-01_RT-AUTH-01_20261022T103000_state-before-after.png
+- ENG-POC-01_RT-AUTH-01_20261022T103000_request-redacted.txt
+- ENG-POC-01_RT-AUTH-01_20261022T103000_response-redacted.txt
+- ENG-POC-01_RT-AUTH-01_20261022T103000_state-before-after.png
 
-Contoh hanya ilustratif; sesuaikan engagement ID dan convention dengan aturan klien.
+Gunakan engagement ID dan format penamaan yang ditetapkan dalam RoE.
