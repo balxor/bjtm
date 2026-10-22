@@ -44,7 +44,7 @@ Beri nilai setiap dimensi dari 0 sampai 5, lalu hitung. Nilai 0 berarti hasil uj
 | 30–49 | D: Prioritas rendah | Catat dan kelompokkan; jangan menggeser kasus berisiko tinggi tanpa alasan |
 | 0–29 | E: Informasional / sangat rendah | Catat bila berguna, biasanya bukan skenario demo utama |
 
-Gunakan faktor sesuai evidence aktual. Skor tidak boleh dinaikkan dengan mengasumsikan jumlah customer, nilai transaksi, atau kerugian yang tidak dibuktikan. Temuan yang hanya mengungkap banner/version atau error detail tanpa data sensitif, bypass kontrol, atau jalur serangan yang terbukti dibatasi maksimal **29/100** dalam simulasi ini.
+Model ini saat ini berorientasi pada contoh risiko remittance yang ada dalam repository. Jika aplikasi uji Bank bukan aplikasi remittance, sesuaikan dimensi dampak bisnis dan integritas dengan proses bisnis aktual sebelum rehearsal; jangan memaksakan konteks transaksi finansial. Gunakan faktor sesuai evidence aktual. Skor tidak boleh dinaikkan dengan mengasumsikan jumlah customer, nilai transaksi, atau kerugian yang tidak dibuktikan. Temuan yang hanya mengungkap banner/version atau error detail tanpa data sensitif, bypass kontrol, atau jalur serangan yang terbukti dibatasi maksimal **29/100** dalam simulasi ini.
 
 ## 4. Contoh: bug apa yang mendapat skor lebih tinggi?
 
