@@ -189,3 +189,5 @@ Rehearsal evidence dapat menunjukkan kesiapan metode, tetapi tidak boleh disajik
 - [Attack-Path Matrix](11-remittance-attack-path-matrix.md)
 - [Sequence Diagrams](12-remittance-sequence-diagrams.md)
 - [API Security Testing Field Playbook](13-api-security-testing-field-playbook.md)
+- [OWASP Top 10:2025 Mapping](17-owasp-top10-2025-mapping.md)
+- [Scoring Temuan untuk Persiapan Evaluasi Bank Jatim](18-scoring-temuan-bank-jatim.md)
