@@ -1,38 +1,35 @@
 # Contributing
 
-Terima kasih telah membantu memelihara playbook ini.
+Panduan kontribusi ini menjaga konsistensi dokumentasi framework dan kualitas materi teknis.
 
-## Prinsip kontribusi
+## Standar penulisan
 
-- Pertahankan orientasi pada pengujian yang berizin dan berdampak minimum.
-- Jangan mengasumsikan arsitektur, scope, atau kontrol aktual Bank Jatim tanpa sumber yang dapat ditelusuri.
-- Beri label jelas pada contoh dan skenario ilustratif.
-- Gunakan test data sintetis dalam contoh.
-- Sertakan expected behavior, evidence requirements, stop conditions, dan cleanup pada prosedur.
-- Pisahkan fakta, rekomendasi, asumsi, serta hal yang masih TBD.
+- Gunakan Bahasa Indonesia teknis dengan istilah keamanan yang lazim.
+- Tulis instruksi secara langsung dan spesifik.
+- Pisahkan requirement, prosedur, expected behavior, hasil aktual, dan rekomendasi.
+- Gunakan status yang konsisten: Proposed, Approved, TBD, Excluded, Blocked, PASS, FAIL, INCONCLUSIVE, dan NOT TESTED.
+- Beri ID unik pada test case, finding, dan evidence.
+- Sertakan precondition, batas dampak, cleanup, serta kriteria hasil untuk setiap prosedur pengujian.
+- Gunakan data sintetis dalam contoh.
+- Jangan menggeneralisasi hasil satu test menjadi klaim keamanan seluruh sistem.
 
-## Aturan publikasi
+## Pengelolaan konten
 
-Repository ini public. Jangan commit:
-- Password, token, API key, private key, session cookie, atau credential lain.
-- Meeting links/codes/passcodes atau undangan yang memuat akses privat.
-- Raw scan output, request/response yang belum disanitasi, atau exploit evidence dari engagement.
-- Data nasabah, nomor rekening, transaksi nyata, PII, atau informasi finansial.
-- Endpoint internal atau diagram yang tidak mendapat persetujuan untuk publikasi.
-- Dokumen tender berklasifikasi atau informasi proprietary klien.
+- Perbarui README saat menambah, menghapus, atau memindahkan dokumen.
+- Gunakan relative links untuk dokumentasi di dalam repository.
+- Periksa tabel, heading, checklist, dan code fences sebelum commit.
+- Perbarui template terkait saat format test case, finding, atau evidence berubah.
+- Pastikan contoh sesuai dengan scope pengujian yang dijelaskan pada dokumen terkait.
 
-## Review checklist sebelum commit
+## Pengamanan artefak
 
-- [ ] Markdown headings, table, links, dan code fences tampil dengan benar.
-- [ ] Setiap langkah eksekusi secara eksplisit dibatasi oleh otorisasi dan scope.
-- [ ] Tidak ada informasi sensitif atau data nyata.
-- [ ] Klaim teknis dapat ditelusuri atau ditandai sebagai rekomendasi/ilustrasi.
-- [ ] Link relatif menuju file yang ada.
-- [ ] Perubahan tidak menyajikan contoh sebagai bukti kerentanan aktual.
+Jangan commit credential, token, private key, raw evidence, data nasabah, data pribadi, transaksi nyata, atau laporan engagement yang dibatasi distribusinya. Simpan artefak tersebut pada evidence store dengan pembatasan akses dan retensi yang sesuai.
 
-## Gaya dokumentasi
+## Review checklist
 
-- Gunakan Bahasa Indonesia profesional dengan istilah keamanan teknis yang lazim.
-- Buat judul dan section yang deskriptif.
-- Pilih tabel untuk matriks dan checklist untuk readiness.
-- Perbarui README bila menambah atau memindahkan dokumen.
+- [ ] Struktur Markdown konsisten.
+- [ ] Semua link relatif mengarah ke file yang tersedia.
+- [ ] Istilah dan status digunakan secara konsisten.
+- [ ] Prosedur memuat prerequisite, expected behavior, dan cleanup.
+- [ ] Contoh memakai data sintetis.
+- [ ] Tidak ada informasi rahasia atau artefak engagement dalam perubahan.
