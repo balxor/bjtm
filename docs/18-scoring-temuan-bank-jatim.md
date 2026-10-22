@@ -21,7 +21,7 @@ Temuan yang berisiko bisnis tinggi tidak otomatis memberi nilai tender tinggi ji
 
 ## 3. Rumus simulasi internal: 0–100
 
-Beri nilai setiap dimensi dari 1 sampai 5, lalu hitung:
+Beri nilai setiap dimensi dari 0 sampai 5, lalu hitung. Nilai 0 berarti dampak atau dukungan bukti untuk dimensi tersebut tidak terbukti; nilai 2 dan 4 adalah tingkat di antara nilai acuan.
 
 `Skor = Σ (Bobot dimensi × Nilai dimensi / 5)`
 
@@ -40,11 +40,11 @@ Beri nilai setiap dimensi dari 1 sampai 5, lalu hitung:
 |---:|---|---|
 | 85–100 | A: Prioritas demo tertinggi | Kandidat utama jika scope, safety, dan evidence siap |
 | 70–84 | B: Prioritas tinggi | Kandidat demo atau pembuktian lanjutan |
-| 55–69 | C: Prioritas menengah | Masuk laporan; demo jika relevan dengan waktu dan rubric |
-| 40–54 | D: Prioritas rendah | Catat dan kelompokkan; jangan menggeser kasus berisiko tinggi tanpa alasan |
-| 20–39 | E: Informasional / sangat rendah | Catat bila berguna, biasanya bukan skenario demo utama |
+| 50–69 | C: Prioritas menengah | Masuk laporan; demo jika relevan dengan waktu dan rubric |
+| 30–49 | D: Prioritas rendah | Catat dan kelompokkan; jangan menggeser kasus berisiko tinggi tanpa alasan |
+| 0–29 | E: Informasional / sangat rendah | Catat bila berguna, biasanya bukan skenario demo utama |
 
-Gunakan faktor sesuai evidence aktual. Skor tidak boleh dinaikkan dengan mengasumsikan jumlah customer, nilai transaksi, atau kerugian yang tidak dibuktikan. Temuan yang hanya mengungkap banner/version atau error detail tanpa data sensitif, bypass kontrol, atau jalur serangan yang terbukti dibatasi maksimal **39/100** dalam simulasi ini.
+Gunakan faktor sesuai evidence aktual. Skor tidak boleh dinaikkan dengan mengasumsikan jumlah customer, nilai transaksi, atau kerugian yang tidak dibuktikan. Temuan yang hanya mengungkap banner/version atau error detail tanpa data sensitif, bypass kontrol, atau jalur serangan yang terbukti dibatasi maksimal **29/100** dalam simulasi ini.
 
 ## 4. Contoh: bug apa yang mendapat skor lebih tinggi?
 
@@ -58,7 +58,7 @@ Angka berikut adalah contoh latihan berdasarkan rumus internal di atas. Angka te
 | Callback yang tidak lolos pemeriksaan integritas mengubah status transaksi menjadi sukses pada simulator | A07, A08, A10 | 5 / 4 / 3 / 3 / 5 / 4 | 83 | B |
 | Akun A dapat membaca detail transaksi sensitif sintetis milik akun B | A01 | 4 / 3 / 4 / 4 / 5 / 3 | 75 | B |
 | Event perubahan transaksi inti tidak memiliki audit trail atau alert yang disyaratkan | A09 | 3 / 3 / 3 / 3 / 4 / 5 | 66 | C |
-| Informasi banner atau error detail tanpa data sensitif dan tanpa jalur eksploitasi lanjutan | A02 atau A10, sesuai root cause | 1 / 1 / 5 / 2 / 4 / 2 | 39 (dibatasi) | D |
+| Informasi banner atau error detail tanpa data sensitif dan tanpa jalur eksploitasi lanjutan | A02 atau A10, sesuai root cause | 1 / 1 / 5 / 2 / 4 / 2 | 29 (dibatasi) | E |
 
 Skor tabel dihitung dari bobot pada Bagian 3. Nilai contoh harus disesuaikan saat prasyarat, konfigurasi, evidence, atau dampak aktual berbeda.
 
