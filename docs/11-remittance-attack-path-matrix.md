@@ -316,7 +316,8 @@ Klasifikasikan finding menggunakan [OWASP Top 10:2025 Mapping](17-owasp-top10-20
 
 ## 10. Referensi teknis
 
-- [OWASP API Security Top 10 2023](https://api-security.owasp.org/editions/2023/en/0x11-t10/)
+- [OWASP Top 10:2025](https://top10.owasp.org/2025/)
+- [OWASP API Security Top 10:2023](https://api-security.owasp.org/editions/2023/en/0x11-t10/)
 - [OWASP Web Security Testing Guide: Business Logic Testing](https://wstg.owasp.org/stable/4-Web_Application_Security_Testing/10-Business_Logic_Testing/)
 - [OWASP ASVS 5.0.0](https://asvs.owasp.org/)
 
