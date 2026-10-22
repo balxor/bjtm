@@ -301,6 +301,8 @@ PoC dinyatakan selesai bila:
 ## 12. Relasi dengan dokumentasi lain
 
 - [Remittance Threat Model](03-remittance-threat-model.md)
+- [OWASP Top 10:2025 Mapping](17-owasp-top10-2025-mapping.md)
+- [Scoring Temuan untuk Persiapan Evaluasi Bank Jatim](18-scoring-temuan-bank-jatim.md)
 - [Remittance Test Catalog](10-remittance-test-catalog.md)
 - [Attack-Path Matrix](11-remittance-attack-path-matrix.md)
 - [Sequence Diagrams](12-remittance-sequence-diagrams.md)
