@@ -2,7 +2,7 @@
 
 ## 1. Tujuan dan metode
 
-Dokumen ini menjabarkan pengujian API dan business logic secara manual-first. Tim memetakan endpoint dalam scope, menyusun hipotesis, memvalidasi kontrol, merekam evidence, dan mendokumentasikan hasil yang dapat diulang.
+Dokumen ini menjabarkan pengujian API dan business logic secara manual-first. Tim memetakan endpoint dalam scope, menyusun hipotesis, memvalidasi kontrol, merekam evidence, dan mendokumentasikan hasil yang dapat diulang. Gunakan fokus remittance dalam playbook ini hanya jika aplikasi yang ditetapkan Bank mencakup remittance. Nama aplikasi dan cakupan teknis harus mengikuti scope resmi. Acuan objective, deliverable, dan enam aspek evaluasi ada di [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md).
 
 Pada sistem remittance, pembuktian dibatasi pada akses dan perubahan terhadap objek sintetis. Tidak dilakukan post-exploitation di luar kebutuhan pembuktian, tidak dilakukan pivot ke sistem lain, dan tidak dilakukan akses data nasabah nyata.
 
