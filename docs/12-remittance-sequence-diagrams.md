@@ -48,18 +48,18 @@ sequenceDiagram
         WF->>AUD: Record maker submission
         WF-->>API: Approval pending
         API-->>Maker: Approval status
-    end
 
-    Checker->>API: Approve transaction
-    API->>IAM: Validate checker identity and role
-    IAM-->>API: Checker permitted
-    API->>WF: Approve transaction_id and version
-    WF->>DB: Verify state, version, SoD, and approval policy
-    DB-->>WF: Current state/version
-    WF->>DB: Store approval bound to approved version
-    WF->>AUD: Record checker, action, version, decision
-    WF-->>API: Approved
-    API-->>Checker: Approval result
+        Checker->>API: Approve transaction
+        API->>IAM: Validate checker identity and role
+        IAM-->>API: Checker permitted
+        API->>WF: Approve transaction_id and version
+        WF->>DB: Verify state, version, SoD, and approval policy
+        DB-->>WF: Current state/version
+        WF->>DB: Store approval bound to approved version
+        WF->>AUD: Record checker, action, version, decision
+        WF-->>API: Approved
+        API-->>Checker: Approval result
+    end
 
     Maker->>API: Submit approved transaction
     API->>ORCH: Submit transaction_id and idempotency reference
@@ -135,7 +135,7 @@ sequenceDiagram
         WF-->>API: Reject or require new approval
         API->>AUD: Record stale approval rejection
         API-->>M: Not eligible for dispatch
-    else Policy permits the unchanged approved version
+    else Update is rejected or no approval-bound field changed
         WF-->>API: Approval still valid by policy
         API->>ADP: Dispatch only if every submit condition passes
         API->>AUD: Record submit decision
