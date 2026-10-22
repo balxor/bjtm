@@ -87,3 +87,10 @@ Tentukan kriteria retest saat finding dibuat. Contoh:
 - Test case awal dan negative-control case menghasilkan output sesuai expected behavior.
 
 Retest dilakukan dalam scope dan environment yang ditetapkan untuk engagement.
+
+
+## Klasifikasi OWASP dan scoring temuan
+
+Setiap finding mencantumkan kategori utama [OWASP Top 10:2025](17-owasp-top10-2025-mapping.md), serta OWASP API Security Top 10:2023 atau CWE bila relevan. Kategori ditentukan berdasarkan root cause yang didukung evidence, bukan sekadar nama test.
+
+Dalam laporan, pisahkan technical severity/CVSS, dampak bisnis yang diamati, potential impact, attack-path risk score, internal finding-priority score, dan poin evaluasi tender. Nilai dalam [Scoring Temuan untuk Persiapan Evaluasi Bank Jatim](18-scoring-temuan-bank-jatim.md) merupakan simulasi internal dan tidak boleh disampaikan sebagai rubrik resmi Bank Jatim.
