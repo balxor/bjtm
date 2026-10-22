@@ -17,7 +17,7 @@ Hindari klaim absolut seperti “100% secure”, “zero risk”, atau jaminan b
 
 ## Internal readiness scorecard
 
-Dokumen jadwal Bank Jatim menyebut enam aspek evaluasi tanpa bobot angka. Bobot di bawah adalah **bobot rehearsal internal untuk melatih tim pada keenam aspek tersebut**, bukan bobot resmi tender. Rubrik resmi menjadi acuan penilaian tender.
+Dokumen jadwal Bank Jatim menyebut enam aspek evaluasi tanpa bobot angka. Bobot di bawah adalah **bobot rehearsal internal untuk melatih tim pada keenam aspek tersebut**, bukan bobot resmi tender. Rubrik resmi menjadi acuan penilaian tender. Rincian indikator dan deliverable yang diminta Bank tersedia di [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md).
 
 | Area | Bobot rehearsal internal | Pertanyaan reviewer |
 |---|---:|---|
