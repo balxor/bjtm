@@ -1,14 +1,14 @@
 # Test Case Template
 
-> Salin template ini untuk setiap test case. Jangan isi target atau langkah eksekusi sebelum aset, akun, environment, dan metode disetujui dalam RoE.
+Gunakan template ini untuk setiap test case. Isi target dan prosedur sesuai scope, akun, environment, serta metode yang tercantum dalam RoE.
 
 ## Metadata
 
 - **Engagement ID:**
 - **Test Case ID:**
 - **Versi:**
-- **Status:** Proposed / Approved / Blocked / Tested
-- **Requirement/source reference:**
+- **Status:** Draft / Approved / Blocked / Tested
+- **Requirement reference:**
 - **Author / reviewer:**
 - **Tanggal dan zona waktu:**
 
@@ -29,9 +29,9 @@
 - **Authorization reference:**
 - **Exclusions / safety guardrails:**
 
-## Prosedur terkontrol
+## Prosedur pengujian
 
-| Step | Aksi yang disetujui | Expected result | Observed result | Evidence reference |
+| Step | Test action | Expected result | Observed result | Evidence reference |
 |---:|---|---|---|---|
 | 1 | TBD | TBD | TBD | TBD |
 | 2 | TBD | TBD | TBD | TBD |
@@ -49,17 +49,17 @@
 ## Evidence, cleanup, dan approval
 
 - **Evidence captured:**
-- **Redaction checked by:**
+- **Redaction reviewer:**
 - **Cleanup / rollback:**
-- **Stop condition applicable:**
+- **Applicable stop condition:**
 - **Execution approved by:**
 - **Retest criteria:**
 - **Notes:**
 
 ## Post-test checklist
 
-- [ ] Tidak ada data di luar test population yang diambil/diubah.
-- [ ] State transaksi/objek uji diverifikasi dan direkonsiliasi.
-- [ ] Evidence telah disunting dan disimpan sesuai kebijakan.
-- [ ] Status serta keterbatasan hasil dicatat.
+- [ ] Tidak ada data di luar test population yang diambil atau diubah.
+- [ ] State transaksi/objek uji diperiksa dan direkonsiliasi.
+- [ ] Evidence disunting dan disimpan sesuai prosedur engagement.
+- [ ] Status dan batas hasil dicatat.
 - [ ] Cleanup selesai atau exception dieskalasikan.
