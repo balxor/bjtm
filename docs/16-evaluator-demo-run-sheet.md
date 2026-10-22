@@ -2,7 +2,7 @@
 
 ## 1. Tujuan
 
-Run sheet ini digunakan oleh presenter, test operator, evidence lead, dan engagement lead untuk menjalankan demonstrasi PoC yang konsisten. Agenda dapat disesuaikan dengan waktu dan rubric evaluasi tender.
+Run sheet ini digunakan oleh presenter, test operator, evidence lead, dan engagement lead untuk menjalankan demonstrasi PoC yang konsisten. Agenda dapat disesuaikan dengan waktu dan rubric evaluasi tender. Gunakan skenario remittance di bawah hanya jika aplikasi yang ditunjuk Bank memang mencakup remittance. Brief PoC yang tersedia menyebut satu aplikasi uji, tetapi belum menyebut nama atau arsitektur aplikasi. Gunakan [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md) sebagai acuan deliverable, enam aspek evaluasi, dan Rules of Engagement.
 
 ## 2. Peran
 
