@@ -27,6 +27,7 @@ Framework ini digunakan untuk merencanakan dan melaksanakan Proof of Concept (Po
 | [Remittance test catalog](docs/10-remittance-test-catalog.md) | Test case teknis, preconditions, expected result, evidence, serta kriteria pass/fail |
 | [Attack-path matrix](docs/11-remittance-attack-path-matrix.md) | Metode manual-first, scoring likelihood × impact, prioritas, dan detail jalur uji |
 | [Sequence diagrams](docs/12-remittance-sequence-diagrams.md) | Diagram Create-to-Submit, Approval Binding, Retry, Callback, dan Reconciliation |
+| [OSCP / Bug-Hunter Field Playbook](docs/13-oscp-bughunter-field-playbook.md) | Manual API enumeration, authorization testing, request diff, workflow, idempotency, dan finding validation |
 | [Test-case template](templates/test-case-template.md) | Format desain dan pelaksanaan test |
 | [Finding template](templates/finding-template.md) | Format temuan dan rekomendasi |
 | [Evidence-log template](templates/evidence-log-template.md) | Indeks evidence dan kontrol penyimpanan |
