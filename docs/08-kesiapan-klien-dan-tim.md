@@ -1,58 +1,59 @@
 # Kesiapan Klien dan Tim
 
-## Input yang diperlukan dari klien
+## Input proyek
 
-| Input | Mengapa diperlukan | Status |
+| Input | Kegunaan | Status |
 |---|---|---|
-| TOR/RFP/SoW terkini | Sumber scope, deliverable, dan kriteria penerimaan | TBD |
-| PoC evaluation rubric | Agar prioritas sesuai penilaian resmi | TBD |
-| Arsitektur dan data-flow | Memahami komponen dan trust boundary aktual | TBD |
-| Inventory aplikasi/API/aset | Menghindari target di luar scope | TBD |
-| Environment dan test window | Menentukan batas eksekusi | TBD |
-| Akun serta role uji | Menguji authorization dan separation of duties | TBD |
-| Data dan beneficiary sintetis | Mencegah penggunaan data nasabah nyata | TBD |
-| Transaction/rate limits | Memastikan validasi punya batas eksplisit | TBD |
+| TOR/RFP/SoW | Scope, deliverable, dan kriteria penerimaan | TBD |
+| Evaluation rubric | Bobot dan metode penilaian | TBD |
+| Arsitektur dan data-flow | Komponen dan trust boundary | TBD |
+| Inventory aplikasi/API/aset | Daftar target yang diizinkan | TBD |
+| Environment dan test window | Jadwal dan batas pelaksanaan | TBD |
+| Akun dan role uji | Validasi authorization serta separation of duties | TBD |
+| Data dan beneficiary sintetis | Pelaksanaan test tanpa data transaksi nyata | TBD |
+| Transaction/rate limits | Batas pengujian | TBD |
 | Kontak incident/emergency | Eskalasi dan penghentian aktivitas | TBD |
-| Aturan evidence/retensi | Menjaga kerahasiaan dan integritas bukti | TBD |
-| Existing controls to validate | Menyelaraskan test case dengan kontrol yang diharapkan | TBD |
-| Format deliverable | Memastikan laporan, presentasi, dan matriks sesuai tender | TBD |
+| Evidence handling dan retensi | Penyimpanan, akses, serta penghapusan evidence | TBD |
+| Daftar kontrol yang diuji | Pemetaan test case ke kontrol keamanan | TBD |
+| Format deliverable | Laporan, demo, presentasi, dan matriks | TBD |
 
-## Peran tim yang disarankan
+## Peran tim
 
-| Peran | Akuntabilitas |
+| Peran | Tanggung jawab |
 |---|---|
-| Engagement / PoC lead | Scope, komunikasi, go/no-go, dan eskalasi |
-| Application/API pentester | AuthN/AuthZ, API, dan validasi business logic |
-| Banking process specialist | Memastikan skenario mencerminkan proses yang dikonfirmasi |
-| Infrastructure/cloud specialist | Hanya bila infrastruktur/cloud masuk scope |
-| Evidence and reporting lead | Bukti, quality review, finding register, dan laporan |
-| Client liaison | Koordinasi akun uji, jadwal, pertanyaan, serta persetujuan |
+| Engagement/PoC lead | Scope, komunikasi, go/no-go, dan eskalasi |
+| Application/API pentester | Authentication, authorization, API, dan business logic |
+| Banking/process specialist | Akurasi alur bisnis yang menjadi scope |
+| Infrastructure/cloud specialist | Pengujian infrastruktur jika termasuk scope |
+| Evidence/reporting lead | Evidence, quality review, finding register, dan laporan |
+| Client liaison | Jadwal, akun uji, klarifikasi, dan koordinasi persetujuan |
 
-Satu orang dapat menjalankan beberapa peran jika kemampuan dan independensi review tetap memadai.
+Satu anggota tim dapat memegang beberapa peran jika kapasitas dan review tetap memadai.
 
 ## Persiapan teknis
 
-- Workspace pengujian terpisah dan dikendalikan aksesnya.
-- Tools proxy/API/browser/scanner hanya yang diizinkan RoE.
-- Versi tool dan konfigurasi dicatat.
-- Evidence workflow diuji sebelum PoC.
-- Sinkronisasi waktu terverifikasi.
-- Akun dan hak akses diverifikasi tanpa mengekspos secret di log.
-- Data sintetis dan cleanup procedure disiapkan.
-- Jalur komunikasi dengan pemilik sistem dan tim operasi aktif.
-- Prosedur rollback/stop-test telah dipahami semua anggota.
-- Laporan template dan finding register tersedia sebelum eksekusi.
+- Sediakan workspace pengujian dengan kontrol akses.
+- Gunakan tools yang diizinkan dalam RoE.
+- Catat versi tool dan konfigurasi yang relevan.
+- Uji evidence workflow sebelum PoC.
+- Uji sinkronisasi waktu.
+- Periksa akun dan hak akses tanpa merekam secret di log.
+- Siapkan data sintetis dan cleanup procedure.
+- Pastikan komunikasi dengan pemilik sistem dan tim operasi tersedia.
+- Uji prosedur rollback dan stop-test.
+- Siapkan template laporan serta finding register.
 
-## Pertanyaan klarifikasi untuk panitia/pemilik sistem
+## Pertanyaan klarifikasi proyek
 
-1. Apakah panitia dapat memberikan TOR/RFP/SoW terbaru dan rubric evaluasi PoC?
-2. Komponen remittance mana saja yang termasuk scope, dan environment apa yang digunakan?
-3. Apakah seluruh test berjalan pada sandbox/UAT dengan data serta beneficiary sintetis?
-4. Skenario atau teknik apa yang secara eksplisit dilarang?
-5. Apa batas request, transaksi, dan waktu pengujian serta kriteria stop-test?
-6. Format deliverable apa yang dinilai: demo langsung, laporan teknis, presentasi, atau kombinasi?
-7. Bagaimana proses persetujuan perubahan scope dan pengamanan evidence?
+1. Apa saja aset dan proses bisnis yang termasuk scope?
+2. Environment mana yang digunakan untuk pengujian?
+3. Apakah semua test menggunakan akun dan data sintetis?
+4. Teknik apa yang dilarang atau membutuhkan persetujuan tambahan?
+5. Berapa batas request, transaksi, waktu, dan concurrency?
+6. Deliverable apa yang dinilai dan bagaimana formatnya?
+7. Siapa yang berwenang menyetujui perubahan scope dan penghentian test?
+8. Di mana evidence disimpan, siapa yang dapat mengaksesnya, dan berapa lama retensinya?
 
 ## Definition of Ready
 
-PoC siap direhearsal apabila scope dan rubric diketahui, test cases sudah direview, environment serta akun uji tersedia, demonstrasi tidak dapat memindahkan dana nyata, evidence pipeline berfungsi, dan semua peserta memahami stop conditions.
+PoC siap direhearsal saat scope dan rubric tersedia, test case telah direview, environment dan akun uji siap, jalur transaksi nyata dibatasi sesuai desain, evidence workflow berfungsi, dan seluruh peserta memahami stop conditions.
