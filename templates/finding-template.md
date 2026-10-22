@@ -6,7 +6,10 @@
 - **Judul:**
 - **Severity:** Critical / High / Medium / Low / Informational
 - **Confidence:** High / Medium / Low
-- **CWE / OWASP mapping:** jika relevan
+- **OWASP Top 10:2025 category:** kode dan nama kategori utama
+- **OWASP API Security Top 10:2023 mapping:** jika relevan untuk API
+- **CWE:** jika relevan
+- **CVSS vector/score:** jika diminta oleh rubric engagement
 - **Affected component:**
 - **Business process:**
 - **Related test case ID:**
@@ -49,7 +52,11 @@ Jelaskan dimensi yang relevan:
 
 ## Severity rationale
 
-Catat faktor penilaian severity, prasyarat, batas evidence, potensi impact, serta rubric yang diterapkan.
+Catat faktor penilaian severity, prasyarat, batas evidence, observed impact dan potential impact secara terpisah, serta rubric yang diterapkan. Pisahkan OWASP category, technical severity/CVSS, internal finding-priority score, dan nilai evaluasi tender. Skor internal 0–100 hanya untuk triage/demo; jangan dinyatakan sebagai nilai resmi Bank Jatim tanpa rubric tertulis.
+
+- **Internal finding-priority score (jika dipakai):**
+- **Score rationale per dimension:**
+- **Official evaluation rubric reference:** jika tersedia
 
 ## Rekomendasi
 
