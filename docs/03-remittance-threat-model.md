@@ -6,6 +6,8 @@ Dokumen ini digunakan untuk memetakan risiko keamanan pada sistem remittance, me
 
 Model mencakup channel, API, identity, beneficiary management, transaction orchestration, limit dan fee calculation, approval workflow, fraud/compliance services bila digunakan, payment connector, callback/webhook, core banking atau ledger, reconciliation, notification, dan audit logging.
 
+Gunakan model ini hanya jika aplikasi yang ditetapkan Bank Jatim terkait remittance. Dokumen jadwal PoC VAPT menyebut satu aplikasi uji, tetapi belum mengidentifikasi nama aplikasi atau arsitektur teknisnya. Aset dan komponen aktual harus mengikuti scope yang diberikan Bank.
+
 Gunakan komponen yang memang ada dalam arsitektur engagement. Tandai komponen lain sebagai not applicable. Pemilihan test case harus mengikuti scope, Rules of Engagement (RoE), environment, dan batas transaksi yang telah ditetapkan.
 
 ## 2. Arsitektur remittance referensi
@@ -431,4 +433,4 @@ Gunakan OWASP Top 10:2025 untuk klasifikasi risiko aplikasi web, OWASP API Secur
 - [OWASP Application Security Verification Standard (ASVS) 5.0.0](https://asvs.owasp.org/): requirement verifikasi keamanan aplikasi web dan service.
 - [OWASP Web Security Testing Guide 4.2: Business Logic Testing](https://wstg.owasp.org/stable/4-Web_Application_Security_Testing/10-Business_Logic_Testing/): data validation, request forgery, integrity checks, process timing, limits, workflow circumvention, dan payment functionality.
 
-Untuk detail test case, gunakan [Remittance Test Catalog](10-remittance-test-catalog.md), [OWASP Top 10:2025 Mapping](17-owasp-top10-2025-mapping.md), [Attack-Path Matrix](11-remittance-attack-path-matrix.md), dan [Sequence Diagrams](12-remittance-sequence-diagrams.md). Gunakan [Scoring Temuan untuk Persiapan Evaluasi Bank Jatim](18-scoring-temuan-bank-jatim.md) hanya sebagai model internal sampai rubric resmi diperoleh. Catat identifier requirement dan acceptance criteria pada test-case register.
+Untuk objective dan kriteria PoC Bank Jatim, lihat [Objective dan Kriteria Evaluasi PoC Bank Jatim](19-objective-dan-kriteria-poc-bank-jatim.md). Untuk detail test case remittance, gunakan [Remittance Test Catalog](10-remittance-test-catalog.md), [OWASP Top 10:2025 Mapping](17-owasp-top10-2025-mapping.md), [Attack-Path Matrix](11-remittance-attack-path-matrix.md), dan [Sequence Diagrams](12-remittance-sequence-diagrams.md). Gunakan [Scoring Temuan untuk Persiapan Evaluasi Bank Jatim](18-scoring-temuan-bank-jatim.md) hanya sebagai model internal sampai rubric resmi diperoleh. Catat identifier requirement dan acceptance criteria pada test-case register.
